@@ -3,21 +3,23 @@
  * The Student class represents a student in a student administration system.
  * It holds the student details relevant in our context.
  * 
- * @author Michael Kölling and David Barnes
- * @version 2011.07.31
+ * @author (Lily Mccullough)
+ * @version (07/10/2020)
  */
 public class Student
 {
-    // the student's full name
+    // the student's name
     private String name;
     // the student ID
     private String id;
-    // the amount of credits for study taken so far
+    // the students given credits
     private int credits;
+    // students class
+    Course getCourse = new Course();
 
     /**
      * Create a new student with a given name and ID number.
-     */
+    */
     public Student(String fullName, String studentID)
     {
         name = fullName;
@@ -26,8 +28,16 @@ public class Student
     }
 
     /**
+     * Add the course to the student
+    */
+    public String getCourse()
+    {
+       return Course.courseID + ", " + Course.courseName;
+    }
+    
+    /**
      * Return the full name of this student.
-     */
+    */
     public String getName()
     {
         return name;
@@ -76,10 +86,10 @@ public class Student
     }
     
     /**
-     * Print the student's name and ID number to the output terminal.
+     * print the student id, full name, credits and course to the terminal
      */
     public void print()
     {
-        System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+        System.out.println(name + ", student ID: " + id + ", credits: " + credits + ", course: " + Course.courseID + ", " + Course.courseName);
     }
 }

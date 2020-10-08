@@ -1,10 +1,10 @@
 LabClass co452Lab = new LabClass(3);
-Student student1 = new Student("Klay Barker", "21905256");
-Student student2 = new Student("Eliot Compton", "21906753");
-Student student3 = new Student("Rizwan Greer", "21905217");
-co452Lab.enrollStudent(student1);
-co452Lab.enrollStudent(student2);
-co452Lab.enrollStudent(student3);
+Student barker5256 = new Student("Klay Barker", "21905256");
+Student compton6753 = new Student("Eliot Compton", "21906753");
+Student greer5217 = new Student("Rizwan Greer", "21905217");
+co452Lab.enrollStudent(barker5256);
+co452Lab.enrollStudent(compton6753);
+co452Lab.enrollStudent(greer5217);
 co452Lab.setInstructor("Nicholas Day");
 co452Lab.setRoom("G100");
 co452Lab.setTime("Tuesday, 29th September, 2020");
@@ -16,10 +16,10 @@ Klay Barker, student ID: 21905256, credits: 0
 Eliot Compton, student ID: 21906753, credits: 0
 Rizwan Greer, student ID: 21905217, credits: 0
 Number of students: 3
-student1.addCredits(20);
-student2.addCredits(20);
-student3.addCredits(20);
-student1.changeName("Clay Barker");
+barker5256.addCredits(20);
+compton6753.addCredits(20);
+greer5217.addCredits(20);
+barker5256.changeName("Clay Barker");
 co452Lab.printList();
 Lab class Tuesday, 29th September, 2020
 Instructor: Nicholas Day   Room: G100
