@@ -9,7 +9,7 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Lily Mccullough
  */
 public class TicketMachine
 {
@@ -19,6 +19,8 @@ public class TicketMachine
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
+    
+    private Ticket ticket;
 
     /**
      * Create a machine that issues tickets of the given price.
