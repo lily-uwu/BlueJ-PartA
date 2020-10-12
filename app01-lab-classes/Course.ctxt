@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=Course
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Course\ here.\r\n\r\n\ @author\ (Lily\ Mccullough)\r\n\ @version\ (07/10/2020)\r\n
-comment1.params=
-comment1.target=Course()
-comment1.text=\r\n\ Assigns\ a\ course\ ID\ and\ course\ name\r\n
+comment0.text=\r\n\ This\ class\ assigns\ values\ related\ to\ the\ course\ a\ student\ may\ be\ on.\ In\ this\ case\ we\ include\ the\ course\ title\ and\ course\ ID.\r\n\r\n\ @author\ (Lily\ Mccullough)\r\n\ @version\ (07/10/2020)\r\n
+comment1.params=getCourseID\ getCourseName
+comment1.target=Course(java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Assigns\ a\ course\ ID\ and\ course\ name.\r\n
 comment2.params=
-comment2.target=java.lang.String\ getCourse()
-comment2.text=\r\n\ Returns\ the\ course\ ID\ and\ name\r\n
+comment2.target=void\ printCourse()
+comment2.text=\r\n\ Prints\ the\ course\ ID\ and\ name.\r\n
 numComments=3
