@@ -1,31 +1,31 @@
 
 /**
- * Write a description of class Course here.
+ * This class assigns values related to the course a student may be on. In this case we include the course title and course ID.
  *
  * @author (Lily Mccullough)
  * @version (07/10/2020)
  */
 public class Course
 {
-    // the students course ID
-    public static String courseID = "G401";
-    // the students course name
-    public static String courseName = "Games Development";
+    // the course ID
+    private String courseID;
+    // the course name
+    private String courseName;
 
   /**
-   * Assigns a course ID and course name
+   * Assigns a course ID and course name.
   */
-    public Course()
+    public Course(String getCourseID, String getCourseName)
     {
-        courseID = "G401";
-        courseName = "Games Development";
+        courseID = getCourseID;
+        courseName = getCourseName;
     }
   /**
-   * Returns the course ID and name
+   * Prints the course ID and name.
   */
-  public String getCourse()
+  public void printCourse()
    {
-       return courseID + " " + courseName;
+       System.out.println("Course: " + courseID + ", " + courseName);
    }
 }
  
