@@ -8,9 +8,9 @@ import java.util.Date;
 public class Ticket
 {
     //
-    private String destination;
+    public String destination;
     //
-    private Date getDateTime;
+    public Date getDateTime;
     //
     public int cost;    
     /**

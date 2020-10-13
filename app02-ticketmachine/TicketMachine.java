@@ -40,7 +40,7 @@ public class TicketMachine
     }
 
     /**
-    * Return the price of a ticket.
+    * Return the price of chosen ticket.
     */
     public int getCost()
     {
@@ -104,25 +104,26 @@ public class TicketMachine
      */
     public void printTicket()
     {
-        if(balance >= cost) 
+        if(balance >= chosenTicket.cost) 
         {
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
-            System.out.println("# " + cost + " cents.");
+            System.out.println("# " + chosenTicket.destination + " Ticket");
+            System.out.println("# " + chosenTicket.cost + " cents.");
+            System.out.println("# " + chosenTicket.getDateTime);
             System.out.println("##################");
             System.out.println();
 
             // Update the total collected with the price.
-            total = total + cost;
+            total = total + chosenTicket.cost;
             // Reduce the balance by the price.
-            balance = balance - cost;
+            balance = balance - chosenTicket.cost;
         }
         else 
         {
             System.out.println("You must insert at least: " +
-                               (cost - balance) + " more cents.");
+                               (chosenTicket.cost - balance) + " more cents.");
                     
         }
     }
