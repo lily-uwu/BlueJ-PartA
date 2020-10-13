@@ -12,11 +12,11 @@ public class Ticket
     //
     private Date getDateTime;
     //
-    private double cost;    
+    private int cost;    
     /**
     * Constructor to assign values for ticket destination, price and current date/time.
     */
-    public Ticket(String destination, double cost)
+    public Ticket(String destination, int cost)
     {
         // initialise instance variables
         this.destination = destination;
@@ -29,7 +29,7 @@ public class Ticket
     public void printTicket()
     {
         System.out.println("Destination: " + destination);
-        System.out.println("Cost: £" + cost);
+        System.out.println("Cost: " + cost + " pence." );
         System.out.println("Date and Time: " + getDateTime);
     }
 }
