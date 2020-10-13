@@ -1,0 +1,64 @@
+TicketMachine ticketMachine1 = new TicketMachine();
+ticketMachine1.chooseAmershamTicket();
+ticketMachine1.getCost()
+    returned int 300
+ticketMachine1.insert100Coin();
+You have inserted 100 pence. The current balance is: 100
+ticketMachine1.insert100Coin();
+You have inserted 100 pence. The current balance is: 200
+ticketMachine1.printTicket();
+You must insert at least: 100 more pence.
+ticketMachine1.insert100Coin();
+You have inserted 100 pence. The current balance is: 300
+ticketMachine1.printTicket();
+##################
+# The BlueJ Line
+# Amersham Ticket
+# 300 pence.
+# Tue Oct 13 20:30:47 BST 2020
+##################
+
+ticketMachine1.chooseAylesburyTicket();
+ticketMachine1.getCost()
+    returned int 220
+ticketMachine1.getBalance()
+    returned int 0
+ticketMachine1.insert200Coin();
+You have inserted 200 pence. The current balance is: 200
+ticketMachine1.insert200Coin();
+You have inserted 200 pence. The current balance is: 400
+ticketMachine1.printTicket();
+##################
+# The BlueJ Line
+# Aylesbury Ticket
+# 220 pence.
+# Tue Oct 13 20:30:47 BST 2020
+##################
+
+ticketMachine1.getBalance()
+    returned int 180
+ticketMachine1.refundBalance()
+    returned int 180
+ticketMachine1.getBalance()
+    returned int 0
+ticketMachine1.chooseHighwycombeTicket();
+ticketMachine1.getCost()
+    returned int 330
+ticketMachine1.insert200Coin();
+You have inserted 200 pence. The current balance is: 200
+ticketMachine1.insert100Coin();
+You have inserted 100 pence. The current balance is: 300
+ticketMachine1.insert20Coin();
+You have inserted 20 pence. The current balance is: 320
+ticketMachine1.insert10Coin();
+You have inserted 10 pence. The current balance is: 330
+ticketMachine1.printTicket();
+##################
+# The BlueJ Line
+# High Wycombe Ticket
+# 330 pence.
+# Tue Oct 13 20:30:47 BST 2020
+##################
+
+ticketMachine1.getBalance()
+    returned int 0
