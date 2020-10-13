@@ -55,43 +55,62 @@ public class TicketMachine
     {
         return balance;
     }
-
+    
     /**
-     * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
-     */
-    public void insertMoney(int amount)
+    * Allows the user to insert a 10 pence coin.
+    */
+    public void insert10Coin()
     {
-        if(amount > 0) 
-        {
-            balance = balance + amount;
-        }
-        else 
-        {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
-        }
+        balance = balance + 10;
+        System.out.println("You have inserted 10 pence. The current balance is: " + balance);
+    }
+    
+    /**
+    * Allows the user to insert a 20 pence coin.
+    */
+        public void insert20Coin()
+    {
+        balance = balance + 20;
+        System.out.println("You have inserted 20 pence. The current balance is: " + balance);
+    }
+    
+    /**
+    * Allows the user to insert a 100 pence coin.
+    */
+        public void insert100Coin()
+    {
+        balance = balance + 100;
+        System.out.println("You have inserted 100 pence. The current balance is: " + balance);
+    }
+    
+    /**
+    * Allows the user to insert a 200 pence coin.
+    */
+        public void insert200Coin()
+    {
+        balance = balance + 200;
+        System.out.println("You have inserted 200 pence. The current balance is: " + balance);
     }
     
     /**
     * Allows the user to choose the Aylesbury Ticket
-     */
+    */
     public void chooseAylesburyTicket()
     {
         chosenTicket = AYLESBURY_TICKET;
     }
     
-        /**
+    /**
     * Allows the user to choose the Amersham Ticket
-     */
+    */
     public void chooseAmershamTicket()
     {
         chosenTicket = AMERSHAM_TICKET;
     }
     
-        /**
+    /**
     * Allows the user to choose the High Wycombe Ticket
-     */
+    */
     public void chooseHighwycombeTicket()
     {
         chosenTicket = HIGHWYCOMBE_TICKET;
@@ -110,7 +129,7 @@ public class TicketMachine
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
             System.out.println("# " + chosenTicket.destination + " Ticket");
-            System.out.println("# " + chosenTicket.cost + " cents.");
+            System.out.println("# " + chosenTicket.cost + " pence.");
             System.out.println("# " + chosenTicket.getDateTime);
             System.out.println("##################");
             System.out.println();
@@ -123,7 +142,7 @@ public class TicketMachine
         else 
         {
             System.out.println("You must insert at least: " +
-                               (chosenTicket.cost - balance) + " more cents.");
+                               (chosenTicket.cost - balance) + " more pence.");
                     
         }
     }
