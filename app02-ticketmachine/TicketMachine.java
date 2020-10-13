@@ -30,27 +30,27 @@ public class TicketMachine
     public static final Ticket HIGHWYCOMBE_TICKET = new Ticket("High Wycombe", 330);
 
     /**
-     * Create a machine that issues tickets of the given price.
-     */
+    * Create a machine that issues tickets.
+    */
     public TicketMachine()
     {
-        cost = 0;
         balance = 0;
         total = 0;
+        chosenTicket = null;
     }
 
     /**
-     * @Return The price of a ticket.
-     */
+    * Return the price of a ticket.
+    */
     public int getCost()
     {
-        return cost;
+        return chosenTicket.cost;
     }
 
     /**
-     * Return The amount of money already inserted for the
-     * next ticket.
-     */
+    * Return The amount of money already inserted for the
+    * next ticket.
+    */
     public int getBalance()
     {
         return balance;

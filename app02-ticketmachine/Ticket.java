@@ -12,7 +12,7 @@ public class Ticket
     //
     private Date getDateTime;
     //
-    private int cost;    
+    public int cost;    
     /**
     * Constructor to assign values for ticket destination, price and current date/time.
     */
