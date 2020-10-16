@@ -1,8 +1,0 @@
-Course courseGameDev = new Course("G401", "Games Development");
-Student studentKBarker = new Student("Klay Barker", "21908755");
-studentKBarker.assignStudentCourse(courseGameDev);
-studentKBarker.print();
-Klay Barker, student ID: 21908755, credits: 0, course: 
-Course: G401, Games Development
-courseGameDev.printCourse();
-Course: G401, Games Development
