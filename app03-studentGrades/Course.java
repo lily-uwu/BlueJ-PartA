@@ -33,6 +33,14 @@ public class Course
         finalGrade = null;
     }
 
+    public void assignModules(Module module1, Module module2, Module module3, Module module4)
+    {
+        this.module1 = module1;
+        this.module2 = module2;
+        this.module3 = module3;
+        this.module4 = module4;
+    }
+    
     /**
      * Method to print the details of the course, including modules
      */
