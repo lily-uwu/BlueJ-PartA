@@ -1,0 +1,31 @@
+Student lilyMcc = new Student("Lily Mccullough", "G401");
+Course courseGameDev = new Course("Games Development", "G401");
+Module module3D = new Module("3D Modelling", "CO450");
+Module moduleProgramming = new Module("Programming Concepts", "CO451");
+Module moduleCompArch = new Module("Computer Architectures", "CO452");
+Module moduleGameDesign = new Module("Games Design", "CO453");
+lilyMcc.enrolOnCourse(courseGameDev);
+courseGameDev.assignModules(module3D, moduleProgramming, moduleCompArch, moduleGameDesign);
+courseGameDev.changeModuleMark(56, 78, 96, 45);
+module3D.printModule();
+Module: CO450, 3D Modelling. Current mark: 56
+moduleProgramming.printModule();
+Module: CO451, Programming Concepts. Current mark: 78
+moduleCompArch.printModule();
+Module: CO452, Computer Architectures. Current mark: 96
+moduleGameDesign.printModule();
+Module: CO453, Games Design. Current mark: 45
+courseGameDev.printCourseDetails();
+Course: G401, Games Development
+Course Modules: 
+Module: CO450, 3D Modelling. Current mark: 56
+Module: CO451, Programming Concepts. Current mark: 78
+Module: CO452, Computer Architectures. Current mark: 96
+Module: CO453, Games Design. Current mark: 45
+courseGameDev.calculateFinalGrade(module3D, moduleProgramming, moduleCompArch, moduleGameDesign);
+courseGameDev.getFinalGrade()
+    returned String "B"
+lilyMcc.printFinalGrade();
+The final grade is: B
+lilyMcc.print();
+Lily Mccullough, student ID: G401, credits: 0
