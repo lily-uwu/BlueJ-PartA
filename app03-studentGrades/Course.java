@@ -17,10 +17,10 @@ public class Course
     private String finalGrade;
     
     // To call the Module constructor and assign it to four fields for the four modules (probably stupid way of doing this)
-    private Module module1;
-    private Module module2;
-    private Module module3;
-    private Module module4;
+    public Module module1;
+    public Module module2;
+    public Module module3;
+    public Module module4;
 
     /**
      * Constructor to assign intital values to fields
@@ -39,6 +39,17 @@ public class Course
         this.module2 = module2;
         this.module3 = module3;
         this.module4 = module4;
+    }
+    
+    /**
+     * Change the module marks
+    */
+    public void changeModuleMark(int changeMark1, int changeMark2, int changeMark3, int changeMark4)
+    {
+        module1.moduleMark = changeMark1;
+        module2.moduleMark = changeMark2;
+        module3.moduleMark = changeMark3;
+        module4.moduleMark = changeMark4;
     }
     
     /**

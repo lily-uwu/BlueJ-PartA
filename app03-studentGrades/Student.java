@@ -17,6 +17,13 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
+    // calling course calss
+    private Course course;
+    
+    public Course module1;
+    public Course module2;
+    public Course module3;
+    public Course module4;
     
     /**
      * Create a new student with a given name and ID number.
@@ -26,6 +33,14 @@ public class Student
         name = fullName;
         id = studentID;
         credits = 0;
+    }
+    
+    /**
+     * Enrol a student on a course
+     */
+    public void enrolOnCourse(Course course)
+    {
+        this.course = course;
     }
 
     /**
@@ -59,7 +74,6 @@ public class Student
     {
         credits += additionalPoints;
     }
-
     
     /**
      * Return the number of credit points this student has accumulated.

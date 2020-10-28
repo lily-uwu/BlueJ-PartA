@@ -12,7 +12,7 @@ public class Module
     // String for module code
     private String moduleCode;
     //Integer for the module mark
-    private int moduleMark;
+    public int moduleMark;
 
     /**
      * Assigns initial values to a module
@@ -22,14 +22,6 @@ public class Module
         this.moduleTitle = moduleTitle;
         this.moduleCode = moduleCode;
         moduleMark = 0;
-    }
-    
-    /**
-     * Change the module mark
-     */
-    public void changeModuleMark(int changeMark)
-    {
-        this.moduleMark = changeMark;
     }
     
     /**
