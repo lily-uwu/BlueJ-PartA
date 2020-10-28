@@ -14,13 +14,13 @@ public class Course
     // Integer for the total mark (the marks from the modules added together and divided by amount of modules)
     private int totalMark;
     // String for the final grade, this differs from the total mark as it will print a string value representing a grade from A-F
-    private String finalGrade;
+    public String finalGrade;
     
     // To call the Module constructor and assign it to four fields for the four modules (probably stupid way of doing this)
-    public Module module1;
-    public Module module2;
-    public Module module3;
-    public Module module4;
+    private Module module1;
+    private Module module2;
+    private Module module3;
+    private Module module4;
 
     /**
      * Constructor to assign intital values to fields
@@ -33,6 +33,9 @@ public class Course
         finalGrade = null;
     }
 
+    /**
+     * Assign 4 modules to  a course
+     */
     public void assignModules(Module module1, Module module2, Module module3, Module module4)
     {
         this.module1 = module1;
@@ -50,6 +53,33 @@ public class Course
         module2.moduleMark = changeMark2;
         module3.moduleMark = changeMark3;
         module4.moduleMark = changeMark4;
+    }
+    
+    /**
+     * Method to calculate the final grade by adding the total and dividing my amount of modules
+     */
+    public void calculateFinalGrade(Module module1, Module module2, Module module3, Module module4)
+    {
+        totalMark = ((module1.moduleMark + module2.moduleMark + module3.moduleMark + module4.moduleMark) / 4);
+    }
+    
+    /**
+     * If statement to figure out which grading bracket the student should be in
+     */
+    public String getFinalGrade()
+    {
+        if(totalMark >= 0 && totalMark <= 39)
+            {finalGrade = "F";}
+        if(totalMark >= 40 && totalMark <= 49)
+            {finalGrade = "D";}
+        if(totalMark >= 50 && totalMark <= 59)
+            {finalGrade = "C";}
+        if(totalMark >= 60 && totalMark <= 69)
+            {finalGrade = "B";}
+        if(totalMark >= 70 && totalMark <= 100)
+            {finalGrade = "A";}
+            
+        return finalGrade;
     }
     
     /**

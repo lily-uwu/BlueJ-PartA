@@ -20,11 +20,6 @@ public class Student
     // calling course calss
     private Course course;
     
-    public Course module1;
-    public Course module2;
-    public Course module3;
-    public Course module4;
-    
     /**
      * Create a new student with a given name and ID number.
      */
@@ -99,5 +94,13 @@ public class Student
     public void print()
     {
         System.out.println(name + ", student ID: " + id + ", credits: " + credits);
+    }
+    
+    /**
+     * Print the final grade for the students course.
+     */
+    public void printFinalGrade()
+    {
+        System.out.println("The final grade is: " + course.finalGrade);
     }
 }
