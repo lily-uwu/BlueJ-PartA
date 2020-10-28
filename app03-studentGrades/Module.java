@@ -23,4 +23,12 @@ public class Module
         this.moduleCode = moduleCode;
         moduleMark = 0;
     }
+    
+    /**
+     * Change the module mark
+     */
+    public void changeModuleMark(int changeMark)
+    {
+        this.moduleMark = changeMark;
+    }
 }
