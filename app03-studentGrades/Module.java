@@ -31,4 +31,12 @@ public class Module
     {
         this.moduleMark = changeMark;
     }
+    
+    /**
+     * Print the information for this module
+     */
+    public void printModule()
+    {
+        System.out.println("Module: " + moduleCode + ", " + moduleTitle + ". Current mark: " + moduleMark);
+    }
 }
