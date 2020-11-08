@@ -1,23 +1,20 @@
 /**
- * Model some details of a product sold by a company.
+ * Class for products which acts as a template for each, they can then be added to the stock list and manipulated.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author Lily Mccullough
+ * @version 03/11/2020
  */
 public class Product
 {
-    // An identifying number for this product.
+    // Variable to store the ID of the product
     private int id;
-    // The name of this product.
+    // Variable to store the name of the product
     private String name;
-    // The quantity of this product in stock.
+    // Variable to store the quantity of the product.
     private int quantity;
 
     /**
-     * Constructor for objects of class Product.
-     * The initial stock quantity is zero.
-     * @param id The product's identifying number.
-     * @param name The product's name.
+     * Constructor to assign initial values, where id and name are inputed, quantity is defaulted to zero
      */
     public Product(int id, String name)
     {
@@ -27,7 +24,7 @@ public class Product
     }
 
     /**
-     * @return The product's id.
+     * Returns the products ID
      */
     public int getID()
     {
@@ -35,7 +32,7 @@ public class Product
     }
 
     /**
-     * @return The product's name.
+     * Returns the products name
      */
     public String getName()
     {
@@ -43,7 +40,7 @@ public class Product
     }
 
     /**
-     * @return The quantity in stock.
+     * Returns the current quantity of the product
      */
     public int getQuantity()
     {
@@ -51,46 +48,10 @@ public class Product
     }
 
     /**
-     * @return The id, name and quantity in stock.
+     * Returns the ID, name and quantity of the product but all as a single string
      */
     public String toString()
     {
         return id + ": " +  name + " stock level: " + quantity;
-    }
-
-    /**
-     * Restock with the given amount of this product.
-     * The current quantity is incremented by the given amount.
-     * @param amount The number of new items added to the stock.
-     *               This must be greater than zero.
-     */
-    public void increaseQuantity(int amount)
-    {
-        if(amount > 0) 
-        {
-            quantity += amount;
-        }
-        else 
-        {
-            System.out.println("Attempt to restock " + name +
-                               " with a non-positive amount: " + amount);
-        }
-    }
-
-    /**
-     * Sell one of these products.
-     * An error is reported if there appears to be no stock.
-     */
-    public void sellOne()
-    {
-        if(quantity > 0) 
-        {
-            quantity--;
-        }
-        else 
-        {
-            System.out.println(
-                "Attempt to sell an out of stock item: " + name);
-        }
     }
 }
