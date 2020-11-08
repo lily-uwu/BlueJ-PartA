@@ -14,10 +14,18 @@ public class StockManager
     private Product product;
 
     /**
-     * Initialise the stock manager.
+     * Initialise the stock manager
      */
     public StockManager()
     {
         stock = new ArrayList<>();
+    }
+    
+    /**
+     * Add a product to the stock list
+     */
+    public void addProduct(Product item)
+    {
+        stock.add(item);
     }
 }
