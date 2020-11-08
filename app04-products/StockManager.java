@@ -113,4 +113,17 @@ public class StockManager
             }
         }
     }
+    
+    /**
+     * Find a product in the stock list and print that product's details
+     */
+    public void findProduct(int inputID)
+    {
+        if(product.id == inputID)
+        {
+            System.out.println("ID" + " | " + "Product" + " | " + "Quantity");
+            System.out.println("------------------------");
+            System.out.println(product.toString());
+        }
+    }
 }
