@@ -28,4 +28,24 @@ public class StockManager
     {
         stock.add(item);
     }
+    
+    /**
+     * Remove a product object from the stock list based on ID.
+     */
+    public void removeProduct(int inputID)
+    {
+        for(Product product : stock)
+        {
+            if(product.id == inputID)
+            {
+                stock.remove(product);
+                break;
+            }
+            
+            if(product.id != inputID)
+            {
+                System.out.println("Product with ID " + inputID + "could not be found in the stock list");
+            }
+        }
+    }
 }
