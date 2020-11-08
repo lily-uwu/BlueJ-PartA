@@ -44,9 +44,27 @@ public class StockManager
             
             if(product.id != inputID)
             {
-                System.out.println("Product with ID " + inputID + "could not be found in the stock list");
+                System.out.println("Product with ID " + inputID + " could not be found in the stock list");
             }
         }
     }
     
+    /**
+     * Simulates accepting a delivery for a particular product of a given amount based on ID
+     */
+    public void acceptDelivery(int inputID, int deliveryAmount)
+    {
+        for(Product product : stock)
+        {
+            if(product.id == inputID)
+            {
+                product.quantity = product.quantity + deliveryAmount;
+            }
+            
+            if(product.id != inputID)
+            {
+                System.out.println("Product with ID " + inputID + " could not be found in the stock list");
+            }
+        }
+    }
 }
