@@ -180,6 +180,7 @@ public class StockManager
      */
     public void printStockList()
     {
+        System.out.println("       Lily's stock list       ");
         System.out.println("ID" + " | " + "Product Name" + " | " + "Quantity");
         System.out.println("------------------------");
         
