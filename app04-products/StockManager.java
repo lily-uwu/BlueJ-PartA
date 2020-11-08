@@ -22,6 +22,14 @@ public class StockManager
     }
     
     /**
+     * Get the current size of the stock list (how many products are in the stock list)
+     */
+    public int getStockSize()
+    {
+        return stock.size();
+    }
+    
+    /**
      * Add a product to the stock list
      */
     public void addProduct(Product item)
@@ -45,6 +53,24 @@ public class StockManager
             if(product.id != inputID)
             {
                 System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+            }
+        }
+    }
+    
+    /**
+     * Checks the stock list and prints out products that are currently low on stock (less than 10)
+     */
+    public void checkStockLevels()
+    {
+        for(Product product : stock)
+        {
+            if(product.quantity < 10)
+            {
+                System.out.println("You are running low on ID: " + product.id + ", " + product.name + ". There are currently " + product.quantity + " remaning.");
+            }
+            else
+            {
+                break;
             }
         }
     }
