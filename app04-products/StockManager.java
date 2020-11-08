@@ -44,7 +44,7 @@ public class StockManager
             
             if(product.id != inputID)
             {
-                System.out.println("Product with ID " + inputID + " could not be found in the stock list");
+                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
             }
         }
     }
@@ -63,7 +63,34 @@ public class StockManager
             
             if(product.id != inputID)
             {
-                System.out.println("Product with ID " + inputID + " could not be found in the stock list");
+                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+            }
+        }
+    }
+    
+    /**
+     * Simulates the sale of a product of a particular product of a given amount based on ID
+     */
+    public void sellProduct(int inputID, int sellAmount)
+    {
+        for(Product product : stock)
+        {
+            if(product.id == inputID)
+            {
+                if(product.quantity - sellAmount < 0)
+                {
+                    System.out.println("You are trying to sell more products than are left in stock.");
+                }
+                
+                if(product.quantity - sellAmount > 0)
+                {
+                    product.quantity = product.quantity - sellAmount;
+                }
+            }
+            
+            if(product.id != inputID)
+            {
+                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
             }
         }
     }
