@@ -148,4 +148,18 @@ public class StockManager
             }
         }
     }
+    
+    /**
+     * Print the stock list
+     */
+    public void printStockList()
+    {
+        System.out.println("ID" + " | " + "Product Name" + " | " + "Quantity");
+        System.out.println("------------------------");
+        
+        for(Product product : stock)
+        {
+            System.out.println(product.toString());
+        }
+    }
 }
