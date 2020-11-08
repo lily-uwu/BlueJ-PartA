@@ -94,4 +94,23 @@ public class StockManager
             }
         }
     }
+    
+    /**
+     * Rename a product in the stock list based on ID.
+     */
+    public void renameProduct(int inputID, String replacementName)
+    {
+        for(Product product : stock)
+        {
+            if(product.id == inputID)
+            {
+                product.name = replacementName;
+            }
+            
+            if(product.id != inputID)
+            {
+                System.out.println("Product with ID " + inputID + " could not be found int he stock list.");
+            }
+        }
+    }
 }
