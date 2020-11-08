@@ -49,11 +49,6 @@ public class StockManager
                 stock.remove(product);
                 break;
             }
-            
-            if(product.id != inputID)
-            {
-                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
-            }
         }
     }
     
@@ -68,10 +63,6 @@ public class StockManager
             {
                 System.out.println("You are running low on ID: " + product.id + ", " + product.name + ". There are currently " + product.quantity + " remaning.");
             }
-            else
-            {
-                break;
-            }
         }
     }
     
@@ -85,11 +76,7 @@ public class StockManager
             if(product.id == inputID)
             {
                 product.quantity = product.quantity + deliveryAmount;
-            }
-            
-            if(product.id != inputID)
-            {
-                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+                break;
             }
         }
     }
@@ -105,18 +92,14 @@ public class StockManager
             {
                 if(product.quantity - sellAmount < 0)
                 {
-                    System.out.println("You are trying to sell more products than are left in stock.");
+                    System.out.println("You are trying to sell more " + product.name + " than are left in stock. There are " + product.quantity + " remaining.");
                 }
                 
                 if(product.quantity - sellAmount > 0)
                 {
                     product.quantity = product.quantity - sellAmount;
                 }
-            }
-            
-            if(product.id != inputID)
-            {
-                System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+                break;
             }
         }
     }
@@ -131,11 +114,7 @@ public class StockManager
             if(product.id == inputID)
             {
                 product.name = replacementName;
-            }
-            
-            if(product.id != inputID)
-            {
-                System.out.println("Product with ID " + inputID + " could not be found int he stock list.");
+                break;
             }
         }
     }
@@ -145,16 +124,15 @@ public class StockManager
      */
     public void findProduct(int inputID)
     {
-        if(product.id == inputID)
+        for(Product product : stock)
         {
-            System.out.println("ID" + " | " + "Product" + " | " + "Quantity");
-            System.out.println("------------------------");
-            System.out.println(product.toString());
-        }
-        
-        if(product.id != inputID)
-        {
-            System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+            if(product.id == inputID)
+            {
+                System.out.println("ID" + " | " + "Product" + " | " + "Quantity");
+                System.out.println("------------------------");
+                System.out.println(product.toString());
+                break;
+            }
         }
     }
     

@@ -1,0 +1,130 @@
+StockDemo demo = new StockDemo();
+demo.demo();
+
+manager.printStockList();
+
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Fishhh , Amount: 0
+101: Burgers , Amount: 0
+102: Fishcakes , Amount: 0
+103: Bubble Tea , Amount: 0
+104: Bread , Amount: 0
+105: Bakewells , Amount: 0
+106: Oraaange , Amount: 0
+107: Milk , Amount: 0
+108: Panccakes , Amount: 0
+109: Milkshake , Amount: 0
+
+manager.acceptDelivery(100, 5)
+manager.acceptDelivery(101, 3)
+manager.acceptDelivery(102, 34)
+manager.acceptDelivery(103, 65)
+manager.acceptDelivery(104, 75)
+manager.acceptDelivery(105, 190)
+manager.acceptDelivery(106, 9)
+manager.acceptDelivery(107, 10)
+manager.acceptDelivery(108, 53)
+manager.acceptDelivery(109, 154)
+
+
+manager.printStockList();
+
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Fishhh , Amount: 5
+101: Burgers , Amount: 3
+102: Fishcakes , Amount: 34
+103: Bubble Tea , Amount: 65
+104: Bread , Amount: 75
+105: Bakewells , Amount: 190
+106: Oraaange , Amount: 9
+107: Milk , Amount: 10
+108: Panccakes , Amount: 53
+109: Milkshake , Amount: 154
+
+manager.sellProduct(100, 10)
+manager.sellProduct(101, 2)
+manager.sellProduct(102, 34)
+manager.sellProduct(103, 66)
+manager.sellProduct(104, 56)
+manager.sellProduct(105, 145)
+manager.sellProduct(106, 8)
+manager.sellProduct(107, 25)
+manager.sellProduct(108, 46)
+manager.sellProduct(109, 79)
+
+You are trying to sell more Fishhh than are left in stock. There are 5 remaining.
+You are trying to sell more Bubble Tea than are left in stock. There are 65 remaining.
+You are trying to sell more Milk than are left in stock. There are 10 remaining.
+
+manager.printStockList();
+
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Fishhh , Amount: 5
+101: Burgers , Amount: 1
+102: Fishcakes , Amount: 34
+103: Bubble Tea , Amount: 65
+104: Bread , Amount: 19
+105: Bakewells , Amount: 45
+106: Oraaange , Amount: 1
+107: Milk , Amount: 10
+108: Panccakes , Amount: 7
+109: Milkshake , Amount: 75
+
+manager.renameProduct(100, 'Fish');
+manager.renameProduct(106, 'Oranges');
+manager.renameProduct(108, 'Pancakes');
+
+manager.printStockList();
+
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Fish , Amount: 5
+101: Burgers , Amount: 1
+102: Fishcakes , Amount: 34
+103: Bubble Tea , Amount: 65
+104: Bread , Amount: 19
+105: Bakewells , Amount: 45
+106: Oranges , Amount: 1
+107: Milk , Amount: 10
+108: Pancakes , Amount: 7
+109: Milkshake , Amount: 75
+
+manager.removeProduct(109);
+
+manager.printStockList();
+
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Fish , Amount: 5
+101: Burgers , Amount: 1
+102: Fishcakes , Amount: 34
+103: Bubble Tea , Amount: 65
+104: Bread , Amount: 19
+105: Bakewells , Amount: 45
+106: Oranges , Amount: 1
+107: Milk , Amount: 10
+108: Pancakes , Amount: 7
+
+manager.checkStockLevels();
+
+You are running low on ID: 100, Fish. There are currently 5 remaning.
+You are running low on ID: 101, Burgers. There are currently 1 remaning.
+You are running low on ID: 106, Oranges. There are currently 1 remaning.
+You are running low on ID: 108, Pancakes. There are currently 7 remaning.
+
+manager.printPartialProductName('B');
+
+Products with names matching 'B'.
+101: Burgers , Amount: 1
+103: Bubble Tea , Amount: 65
+104: Bread , Amount: 19
+105: Bakewells , Amount: 45
+

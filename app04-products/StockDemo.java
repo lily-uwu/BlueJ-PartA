@@ -18,9 +18,16 @@ public class StockDemo
     public StockDemo()
     {
         manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
+        manager.addProduct(new Product(100, "Fishhh"));
+        manager.addProduct(new Product(101, "Burgers"));
+        manager.addProduct(new Product(102, "Fishcakes"));
+        manager.addProduct(new Product(103, "Bubble Tea"));
+        manager.addProduct(new Product(104, "Bread"));
+        manager.addProduct(new Product(105, "Bakewells"));
+        manager.addProduct(new Product(106, "Oraaange"));
+        manager.addProduct(new Product(107, "Milk"));
+        manager.addProduct(new Product(108, "Panccakes"));
+        manager.addProduct(new Product(109, "Milkshake"));
     }
     
     /**
@@ -30,65 +37,104 @@ public class StockDemo
      */
     public void demo()
     {
-        // Show details of all of the products.
-        manager.printProductDetails();
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(132, 5);
-        manager.printProductDetails();
+        System.out.println("");
+        // Prints the list of products and their details
+        System.out.println("manager.printStockList();");
+        System.out.println("");
+        manager.printStockList();
+        System.out.println("");
+        // Accepting delivery of various quantities to multiple products
+        System.out.println("manager.acceptDelivery(100, 5)");
+        System.out.println("manager.acceptDelivery(101, 3)");
+        System.out.println("manager.acceptDelivery(102, 34)");
+        System.out.println("manager.acceptDelivery(103, 65)");
+        System.out.println("manager.acceptDelivery(104, 75)");
+        System.out.println("manager.acceptDelivery(105, 190)");
+        System.out.println("manager.acceptDelivery(106, 9)");
+        System.out.println("manager.acceptDelivery(107, 10)");
+        System.out.println("manager.acceptDelivery(108, 53)");
+        System.out.println("manager.acceptDelivery(109, 154)");
+        System.out.println("");
+        manager.acceptDelivery(100, 5);
+        manager.acceptDelivery(101, 3);
+        manager.acceptDelivery(102, 34);
+        manager.acceptDelivery(103, 65);
+        manager.acceptDelivery(104, 75);
+        manager.acceptDelivery(105, 190);
+        manager.acceptDelivery(106, 9);
+        manager.acceptDelivery(107, 10);
+        manager.acceptDelivery(108, 53);
+        manager.acceptDelivery(109, 154);
+        System.out.println("");
+        // Print method to prove delivery 
+        System.out.println("manager.printStockList();");
+        System.out.println("");
+        manager.printStockList();
+        System.out.println("");
+        // Sells various quantities of some products
+        System.out.println("manager.sellProduct(100, 10)");
+        System.out.println("manager.sellProduct(101, 2)");
+        System.out.println("manager.sellProduct(102, 34)");
+        System.out.println("manager.sellProduct(103, 66)");
+        System.out.println("manager.sellProduct(104, 56)");
+        System.out.println("manager.sellProduct(105, 145)");
+        System.out.println("manager.sellProduct(106, 8)");
+        System.out.println("manager.sellProduct(107, 25)");
+        System.out.println("manager.sellProduct(108, 46)");
+        System.out.println("manager.sellProduct(109, 79)");
+        System.out.println("");
+        manager.sellProduct(100, 10);
+        manager.sellProduct(101, 2);
+        manager.sellProduct(102, 34);
+        manager.sellProduct(103, 66);
+        manager.sellProduct(104, 56);
+        manager.sellProduct(105, 145);
+        manager.sellProduct(106, 8);
+        manager.sellProduct(107, 25);
+        manager.sellProduct(108, 46);
+        manager.sellProduct(109, 79);
+        System.out.println("");
+        // Print method to prove sale of products
+        System.out.println("manager.printStockList();");
+        System.out.println("");
+        manager.printStockList();
+        System.out.println("");
+        // Rename a few products
+        System.out.println("manager.renameProduct(100, 'Fish');");
+        System.out.println("manager.renameProduct(106, 'Oranges');");
+        System.out.println("manager.renameProduct(108, 'Pancakes');");
+        manager.renameProduct(100, "Fish");
+        manager.renameProduct(106, "Oranges");
+        manager.renameProduct(108, "Pancakes");
+        System.out.println("");
+        // Print method to prove name changes
+        System.out.println("manager.printStockList();");
+        System.out.println("");
+        manager.printStockList();
+        System.out.println("");
+        // Remove a product based on ID
+        System.out.println("manager.removeProduct(109);");
+        System.out.println("");
+        manager.removeProduct(109);
+        // Print method to prove removal of product
+        System.out.println("manager.printStockList();");
+        System.out.println("");
+        manager.printStockList();
+        System.out.println("");
+        // Printing a list of products low on stock
+        System.out.println("manager.checkStockLevels();");
+        System.out.println("");
+        manager.checkStockLevels();
+        System.out.println("");
+        // Printing products based on a part of their name
+        System.out.println("manager.printPartialProductName('B');");
+        System.out.println("");
+        manager.printPartialProductName("B");
+        System.out.println("");
     }
     
     /**
-     * Show details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
-     */
-    public void showDetails(int id)
-    {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            System.out.println(product.toString());
-        }
-    }
-    
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id)
-    {
-        Product product = getProduct(id);
-        
-        if(product != null) 
-        {
-            showDetails(id);
-            product.sellOne();
-            showDetails(id);
-        }
-    }
-    
-    /**
-     * Get the product with the given id from the manager.
-     * An error message is printed if there is no match.
-     * @param id The ID of the product.
-     * @return The Product, or null if no matching one is found.
-     */
-    public Product getProduct(int id)
-    {
-        Product product = manager.findProduct(id);
-        
-        if(product == null) 
-        {
-            System.out.println("Product with ID: " + id +
-                               " is not recognised.");
-        }
-        return product;
-    }
-
-    /**
-     * @return The stock manager.
+     * Returns the stock manager
      */
     public StockManager getManager()
     {
