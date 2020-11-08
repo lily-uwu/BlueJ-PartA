@@ -131,4 +131,21 @@ public class StockManager
             System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
         }
     }
+    
+    /**
+     * Find a product or multiple products in the stock list based on 
+     * a part of their name
+     */
+    public void printPartialProductName(String inputName)
+    {
+        System.out.println("Products with names matching '" + inputName + "'.");
+        
+        for(Product product : stock)
+        {
+            if(product.name.contains(inputName))
+            {
+                System.out.println(product.toString());
+            }
+        }
+    }
 }
