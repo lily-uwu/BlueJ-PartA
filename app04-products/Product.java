@@ -7,11 +7,11 @@
 public class Product
 {
     // Variable to store the ID of the product
-    private int id;
+    public int id;
     // Variable to store the name of the product
-    private String name;
+    public String name;
     // Variable to store the quantity of the product.
-    private int quantity;
+    public int quantity;
 
     /**
      * Constructor to assign initial values, where id and name are inputed, quantity is defaulted to zero
