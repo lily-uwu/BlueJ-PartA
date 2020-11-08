@@ -125,5 +125,10 @@ public class StockManager
             System.out.println("------------------------");
             System.out.println(product.toString());
         }
+        
+        if(product.id != inputID)
+        {
+            System.out.println("Product with ID " + inputID + " could not be found in the stock list.");
+        }
     }
 }
