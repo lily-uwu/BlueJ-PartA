@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * and make changes to these products such as quantity, name etc.
  * 
  * @author Lily Mccullough
- * @version 03/11/2020
+ * @version 25/11/2020
  */
 public class StockManager
 {
@@ -29,6 +29,9 @@ public class StockManager
         return stock.size();
     }
     
+    /**
+     * Tests whether the ID entered already exists in the stock array
+     */
     public boolean idChecker(int inputID)
     {
         boolean bool = false;
@@ -48,6 +51,9 @@ public class StockManager
         return bool;
     }
     
+    /**
+     * Tests if the input name is empty, if so it returns an error message.
+     */
     public boolean nameChecker(String inputName)
     {
         boolean testName = true;
@@ -109,7 +115,7 @@ public class StockManager
     }
     
     /**
-     * Checks the stock list and prints out products that are currently low on stock (inputted amount)
+     * Checks the stock list and prints out products that are currently low on stock (input amount)
      */
     public void checkStockLevels(int inputValue)
     {
@@ -182,6 +188,10 @@ public class StockManager
         }
     }
     
+    /**
+     * Restock products that are low, user inputs the inputValue which is the bar for what is considered low in stock
+     * they then inputs an increaseValue which sets the low stock item's quantities to this value
+     */
     public void restockLowProduct(int inputValue, int increaseValue)
     {
         if(inputValue > 0 && increaseValue > 0)
