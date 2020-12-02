@@ -99,6 +99,25 @@ public class StockApp
         manager.acceptDelivery(convertID, convertQuantity);
         printMenuChoices();
     }
+    
+    private void sellAmount()
+    {
+        // Inform the user what they need to input
+        System.out.println("Enter the ID of the product you want to sell: ");
+        // Get user input for ID
+        String inputID = input.getInput();
+        // Convert inputID to int from String
+        int convertID = Integer.parseInt(inputID);
+        // Inform the user what they need to input
+        System.out.println("Enter the amount of product ID: " + convertID + " you want to sell.");
+        // Get user input for Quantity
+        String inputQuantity = input.getInput();
+        // Convert inputQuantity to int from String
+        int convertQuantity = Integer.parseInt(inputQuantity);
+        // Sell product removes quantity from the product with that ID
+        manager.sellProduct(convertID, convertQuantity);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
