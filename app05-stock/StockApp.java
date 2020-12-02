@@ -62,7 +62,7 @@ public class StockApp
         int convertID = Integer.parseInt(inputID);
         // Add the product
         manager.addProduct(new Product(convertID, inputName));
-        printMenuChoices;
+        printMenuChoices();
     }
     
     private void removeProduct()
