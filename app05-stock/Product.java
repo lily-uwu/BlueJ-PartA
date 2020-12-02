@@ -2,7 +2,7 @@
  * Class for products which acts as a template for each, they can then be added to the stock list and manipulated.
  * 
  * @author Lily Mccullough
- * @version 03/11/2020
+ * @version 25/11/2020
  */
 public class Product
 {
