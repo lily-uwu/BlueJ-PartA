@@ -1,0 +1,143 @@
+Program.main();
+******************************
+ Stock Management Application 
+    App05: by Student Name
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 100
+Input the product name: 
+> Apples
+
+Product with ID: 100 name: Apples has been added!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 101
+Input the product name: 
+> Bananas
+
+Product with ID: 101 name: Bananas has been added!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 102
+Input the product name: 
+> Oranges
+
+Product with ID: 102 name: Oranges has been added!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 103
+Input the product name: 
+> Kiwis
+
+Product with ID: 103 name: Kiwis has been added!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 104
+Input the product name: 
+> Grapes
+
+Product with ID: 104 name: Grapes has been added!
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 100
+Input the product name: 
+> Product
+
+Product with ID: 100 has already been found. Product has not been added.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> add
+Input the product ID: 
+> 105
+Input the product name: 
+> 
+
+You have entered an empty name. Please re-enter
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> 

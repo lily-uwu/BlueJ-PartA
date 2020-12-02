@@ -1,0 +1,199 @@
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> remove
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Apples , Amount: 0
+101: Bananas , Amount: 0
+102: Oranges , Amount: 0
+103: Kiwis , Amount: 0
+104: Grapes , Amount: 0
+
+Enter the ID of the product you want to remove: 
+> 104
+Product with ID: 104 has been removed from the stock list.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> remove
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Apples , Amount: 0
+101: Bananas , Amount: 0
+102: Oranges , Amount: 0
+103: Kiwis , Amount: 0
+
+Enter the ID of the product you want to remove: 
+> 105
+Product with ID: 105 could not be found.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> print
+       Lily's stock list       
+ID | Product Name | Quantity
+------------------------
+100: Apples , Amount: 0
+101: Bananas , Amount: 0
+102: Oranges , Amount: 0
+103: Kiwis , Amount: 0
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> delivery
+Enter the ID of the product you want to increase the quantity of: 
+> 100
+Enter the amount of product ID: 100 you want to increase the quantity of.
+> 8
+8 of product ID: 100 have been added.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> delivery
+Enter the ID of the product you want to increase the quantity of: 
+> 100
+Enter the amount of product ID: 100 you want to increase the quantity of.
+> -4
+You have entered an invalid amount to deliver. Please enter a positive number
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> sell
+Enter the ID of the product you want to sell: 
+> 100
+Enter the amount of product ID: 100 you want to sell.
+> 2
+2 of product ID: 100 have been sold.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> sell
+Enter the ID of the product you want to sell: 
+> 100
+Enter the amount of product ID: 100 you want to sell.
+> 10
+You are trying to sell more Apples than are left in stock. There are 6 remaining.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> sell
+Enter the ID of the product you want to sell: 
+> 100
+Enter the amount of product ID: 100 you want to sell.
+> -2
+Please enter a valid amount to sell.
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> search
+Enter the name of a product you would like to find
+> App
+Products with names matching 'App'.
+100: Apples , Amount: 6
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> low
+Enter a number. Any products with a quantity equal to or below this amount will be printed.
+> 2
+You are running low on ID: 101, Bananas. There are currently 0 remaning.
+
+You are running low on ID: 102, Oranges. There are currently 0 remaning.
+
+You are running low on ID: 103, Kiwis. There are currently 0 remaning.
+
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Print:   Print all products
+    Delivery:   Accept a delivery
+    Sell:   Sell product
+    Search:   Search for products from part of their name
+    Low:   Print all products low in stock
+    Restock:   Restock products low in stock
+    Quit:       Quit the program
+
+> quit
+Thanks for using the program.
