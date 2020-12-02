@@ -19,10 +19,11 @@ public class StockApp
     public StockApp()
     {
         input = new InputReader();
+        manager = new StockManager();
     }
 
     /**
-     * 
+     * Method to run the program, after run the user can use the program completely
      */
     public void run()
     {
@@ -31,7 +32,7 @@ public class StockApp
     }
     
     /**
-     * 
+     * Contains the options a user may choose and calls the methods for whatever action they have chosen.
      */
     public void getMenuChoice()
     {
