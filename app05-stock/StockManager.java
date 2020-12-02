@@ -170,21 +170,33 @@ public class StockManager
      */
     public void sellProduct(int inputID, int sellAmount)
     {
-        for(Product product : stock)
+        boolean testID = idChecker(inputID);
+        if(testID = true && sellAmount > 0)
         {
-            if(product.id == inputID)
+            for(Product product : stock)
             {
-                if(product.quantity - sellAmount < 0)
+                if(product.id == inputID)
                 {
-                    System.out.println("You are trying to sell more " + product.name + " than are left in stock. There are " + product.quantity + " remaining.");
+                    if(product.quantity - sellAmount < 0)
+                    {
+                        System.out.println("You are trying to sell more " + product.name + " than are left in stock. There are " + product.quantity + " remaining.");
+                    }
+                    if(product.quantity - sellAmount > 0)
+                    {
+                        System.out.println(sellAmount + " of product ID: " + inputID + " have been sold.");
+                        product.quantity = product.quantity - sellAmount;
+                    }
+                    break;
                 }
-                if(product.quantity - sellAmount > 0)
-                {
-                    System.out.println(sellAmount + " of product ID: " + inputID + " have been sold.");
-                    product.quantity = product.quantity - sellAmount;
-                }
-                break;
             }
+        }
+        if(testID = false)
+        {
+           System.out.println("Product with ID: " + inputID + " could not be found."); 
+        }
+        if(sellAmount < 0)
+        {
+            System.out.println("Please enter a valid amount to sell.");
         }
     }
     
