@@ -80,6 +80,25 @@ public class StockApp
         manager.removeProduct(convertID);
         printMenuChoices();
     }
+    
+    private void addDelivery()
+    {
+        // Inform the user what the need to input
+        System.out.println("Enter the ID of the product you want to increase the quantity of: ");
+        // Get user input for ID
+        String inputID = input.getInput();
+        // Convert the inputID to an int from a String
+        int convertID = Integer.parseInt(inputID);
+        // Inform the user what the need to input
+        System.out.println("Enter the amount of product ID: " + convertID + " you want to increase the quantity of.");
+        // Get user input for Quantity
+        String inputQuantity = input.getInput();
+        // Convert the inputQuantity to int from String
+        int convertQuantity = Integer.parseInt(inputQuantity);
+        // Accept delivery adds the quantity to the product with that ID.
+        manager.acceptDelivery(convertID, convertQuantity);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
