@@ -129,6 +129,19 @@ public class StockApp
         manager.printPartialProductName(inputName);
         printMenuChoices();
     }
+    
+    private void printLowStock()
+    {
+        // Inform the user of what they need to input
+        System.out.println("Enter a number. Any products with a quantity equal to or below this amount will be printed.");
+        // Get user input for upper value
+        String inputAmount = input.getInput();
+        // Convert inputAmount to int from String
+        int convertAmount = Integer.parseInt(inputAmount);
+        // Prints all products with a quantity below the value entered
+        manager.checkStockLevels(convertAmount);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
