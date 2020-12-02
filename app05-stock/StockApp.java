@@ -11,6 +11,7 @@ public class StockApp
 {
     // Use to get user input
     private InputReader input;
+    private StockManager manager;
     
     /**
      * Constructor for objects of class StockApp
