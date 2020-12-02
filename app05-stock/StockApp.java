@@ -170,9 +170,14 @@ public class StockApp
         System.out.println();
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
-        System.out.println("    PrintAll:   Print all products");
+        System.out.println("    Print:   Print all products");
+        System.out.println("    Delivery:   Accept a delivery");
+        System.out.println("    Sell:   Sell product");
+        System.out.println("    Search:   Search for products from part of their name");
+        System.out.println("    Low:   Print all products low in stock");
+        System.out.println("    Restock:   Restock products low in stock");
         System.out.println("    Quit:       Quit the program");
-        System.out.println();        
+        System.out.println();       
     }
     
     /**
