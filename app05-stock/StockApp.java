@@ -118,6 +118,17 @@ public class StockApp
         manager.sellProduct(convertID, convertQuantity);
         printMenuChoices();
     }
+    
+    private void searchProduct()
+    {
+        // Inform the user what they need to input
+        System.out.println("Enter the name of a product you would like to find");
+        // Get user input for name
+        String inputName = input.getInput();
+        // Prints all products that contain the String entered
+        manager.printPartialProductName(inputName);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
