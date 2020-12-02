@@ -65,7 +65,21 @@ public class StockApp
         printMenuChoices;
     }
     
-    
+    private void removeProduct()
+    {
+        // Print the stock list first to show all of the items with their IDs
+        manager.printStockList();
+        System.out.println("");
+        // Prompt to inform the user what they need to input
+        System.out.println("Enter the ID of the product you want to remove: ");
+        // Get an input from the user and assign to variable
+        String inputID = input.getInput();
+        // Convert the String input to an integer
+        int convertID = Integer.parseInt(inputID);
+        // Remove the product
+        manager.removeProduct(convertID);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
