@@ -48,6 +48,9 @@ public class StockApp
         }
     }
     
+    /**
+     * Lets the user add a product with user input
+     */
     private void addProduct()
     {
         // Prompt to inform the user what they need to input
@@ -65,6 +68,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user remove a product with user input
+     */
     private void removeProduct()
     {
         // Print the stock list first to show all of the items with their IDs
@@ -81,6 +87,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user accept a delivery with user input
+     */
     private void addDelivery()
     {
         // Inform the user what the need to input
@@ -100,6 +109,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user sell an amount of product with user input
+     */
     private void sellAmount()
     {
         // Inform the user what they need to input
@@ -119,6 +131,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user search from products with user input
+     */
     private void searchProduct()
     {
         // Inform the user what they need to input
@@ -130,6 +145,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user print products low in stock with user input
+     */
     private void printLowStock()
     {
         // Inform the user of what they need to input
@@ -143,6 +161,9 @@ public class StockApp
         printMenuChoices();
     }
     
+    /**
+     * Lets the user restock products low in stock with user input
+     */
     private void restockLowProduct()
     {
         // Inform the user of what they need to input
