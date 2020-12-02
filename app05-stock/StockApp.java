@@ -48,6 +48,24 @@ public class StockApp
         }
     }
     
+    private void addProduct()
+    {
+        // Prompt to inform the user what they need to input
+        System.out.println("Input the product ID: ");
+        // Get an input from the user and assign to variable
+        String inputID = input.getInput();
+        // Prompt to inform the user what they need to input
+        System.out.println("Input the product name: ");
+        String inputName = input.getInput();
+        System.out.println("");
+        // Convert the String input to an integer
+        int convertID = Integer.parseInt(inputID);
+        // Add the product
+        manager.addProduct(new Product(convertID, inputName));
+        printMenuChoices;
+    }
+    
+    
    
     /**
      * Print out a menu of operation choices
