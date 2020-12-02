@@ -37,14 +37,59 @@ public class StockApp
     public void getMenuChoice()
     {
         boolean finished = false;
+        printMenuChoices();
         
         while(!finished)
-        {
-            printHeading();
-            printMenuChoices();
-           
+        {         
             String choice = input.getInput();
-            finished = true;
+            
+            if (choice.equalsIgnoreCase("add"))
+            { 
+                addProduct();
+            }
+            
+            if (choice.equalsIgnoreCase("remove"))
+            {
+                removeProduct();
+            }
+            
+            if (choice.equalsIgnoreCase("print"))
+            {
+                manager.printStockList();
+                System.out.println("");
+                printMenuChoices();
+            }
+            
+            if (choice.equalsIgnoreCase("delivery"))
+            {
+                addDelivery();
+            }
+            
+            if (choice.equalsIgnoreCase("sell"))
+            {
+                sellAmount();
+            }
+            
+            if (choice.equalsIgnoreCase("search"))
+            {
+                searchProduct();
+            }
+            
+            if (choice.equalsIgnoreCase("low"))
+            {
+                printLowStock();
+            }
+            
+            if (choice.equalsIgnoreCase("restock"))
+            {
+                restockLowProduct();
+            }
+            
+            if (choice.equalsIgnoreCase("quit"))
+            {
+                System.out.println("Thanks for using the program.");
+                finished = true;
+            }
         }
     }
     
