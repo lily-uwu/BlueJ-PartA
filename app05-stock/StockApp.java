@@ -142,6 +142,25 @@ public class StockApp
         manager.checkStockLevels(convertAmount);
         printMenuChoices();
     }
+    
+    private void restockLowProduct()
+    {
+        // Inform the user of what they need to input
+        System.out.println("Enter a number. Any products with a quantity equal to or below this amount will be increased.");
+        // Get user input for upper limit
+        String inputLowStock = input.getInput();
+        // Convert inputLowStock to int from String
+        int convertLowStock = Integer.parseInt(inputLowStock);
+        // Inform the user of what they need to input
+        System.out.println("To what amount would you like to set the low product's quantity to?");
+        // Get user input for what they want to increase low stock items to
+        String inputIncreaseValue = input.getInput();
+        // Convert inputIncreaseValue to int from String
+        int convertIncreaseValue = Integer.parseInt(inputIncreaseValue);
+        // Restocks low products
+        manager.restockLowProduct(convertLowStock, convertIncreaseValue);
+        printMenuChoices();
+    }
    
     /**
      * Print out a menu of operation choices
