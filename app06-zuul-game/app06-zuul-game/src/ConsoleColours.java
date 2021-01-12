@@ -2,8 +2,8 @@
 /**
  * Write a description of class ConsoleColours here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Lily Mccullough
+ * @version 06/01/2021
  */
 public class ConsoleColours
 {

@@ -13,6 +13,7 @@
  * 
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ * modified by Lily Mccullough
  * 
  * Modified and extended by Derek and Andrei
  */
@@ -108,7 +109,7 @@ public class Game
 
         CommandWord commandWord = command.getCommandWord();
 
-        switch (commandWord) 
+        switch (commandWord)
         {
             case UNKNOWN:
                 System.out.println("I don't know what you mean...");

@@ -9,6 +9,7 @@ import java.util.HashMap;
  *
  * @author  Michael Kölling and David J. Barnes
  * @version 2016.02.29
+ * modified by Lily Mccullough
  */
 
 public class CommandWords
