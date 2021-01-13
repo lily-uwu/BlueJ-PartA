@@ -59,28 +59,50 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room prison, guard, sleepingQuarters, hallway, butcher, kitchen, dining, warden, storage, exit;
 
         // create the rooms
-        outside = new Room("outside the main entrance of the university");
-        theater = new Room("in a lecture theater");
-        pub = new Room("in the campus pub");
-        lab = new Room("in a computing lab");
-        office = new Room("in the computing admin office");
+        prison = new Room("in the prison");
+        guard = new Room("in the guard room");
+        sleepingQuarters = new Room("in the guard's sleeping quarters");
+        hallway = new Room("in an empty hallway");
+        butcher = new Room("in the butchers room");
+        kitchen = new Room("in the kitchen");
+        dining = new Room("in the dining room");
+        warden = new Room("in the wardens room");
+        storage = new Room("in the storage room");
+        exit = new Room("in a room that appears to be the way out...but the door is locked");
 
         // initialise room exits
-        outside.setExit("east", theater);
-        outside.setExit("south", lab);
-        outside.setExit("west", pub);
+        prison.setExit("north", guard);
 
-        theater.setExit("west", outside);
+        guard.setExit("south", prison);
+        guard.setExit("east", sleepingQuarters);
+        guard.setExit("west", hallway);
 
-        pub.setExit("east", outside);
+        sleepingQuarters.setExit("west", guard);
 
-        lab.setExit("north", outside);
-        lab.setExit("east", office);
+        hallway.setExit("east", guard);
+        hallway.setExit("west", butcher);
+        hallway.setExit("north", dining);
 
-        office.setExit("west", lab);
+        butcher.setExit("north", kitchen);
+        butcher.setExit("east", hallway);
+
+        kitchen.setExit("south", butcher);
+        kitchen.setExit("east", dining);
+
+        dining.setExit("south", hallway);
+        dining.setExit("west", kitchen);
+        dining.setExit("north", warden);
+
+        warden.setExit("south", dining);
+        warden.setExit("north", storage);
+        warden.setExit("east", exit);
+
+        storage.setExit("south", warden);
+
+        exit.setExit("west", warden);
 
         currentRoom = outside;  // start game outside
     }
