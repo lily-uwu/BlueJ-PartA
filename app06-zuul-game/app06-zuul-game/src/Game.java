@@ -31,6 +31,7 @@ public class Game
     public Game() 
     {
         parser = new Parser();
+        createItems();
         createRooms();
         play();
     }
