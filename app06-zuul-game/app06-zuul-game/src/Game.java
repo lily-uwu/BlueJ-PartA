@@ -107,6 +107,13 @@ public class Game
         currentRoom = outside;  // start game outside
     }
 
+    private void createItems()
+    {
+        Items key;
+
+        key = new Items("Key", "This key must open a door somewhere...");
+    }
+
     /**
      * Print out the opening message for the player.
      */
