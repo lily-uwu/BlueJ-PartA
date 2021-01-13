@@ -104,7 +104,7 @@ public class Game
 
         exit.setExit("west", warden);
 
-        currentRoom = outside;  // start game outside
+        currentRoom = prison;  // start game outside
     }
 
     private void createItems()
