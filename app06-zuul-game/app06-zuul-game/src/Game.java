@@ -24,7 +24,6 @@ public class Game
     private Room currentRoom;
     private Player player;
     private Items key;
-
         
     /**
      * Create the game and initialise its internal map.
@@ -59,6 +58,9 @@ public class Game
         System.out.println("Thank you for playing.  Good bye.");
     }
 
+    /**
+     * method to initialise the player
+     */
     private void createPlayer()
     {
         player = new Player(20);
