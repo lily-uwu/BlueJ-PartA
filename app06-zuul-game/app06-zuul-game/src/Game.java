@@ -23,7 +23,8 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Player player;
-    Items key;
+    private Items key;
+
         
     /**
      * Create the game and initialise its internal map.
@@ -31,6 +32,7 @@ public class Game
     public Game() 
     {
         parser = new Parser();
+        createPlayer();
         createItems();
         createRooms();
         play();
@@ -55,6 +57,11 @@ public class Game
         }
         
         System.out.println("Thank you for playing.  Good bye.");
+    }
+
+    private void createPlayer()
+    {
+        player = new Player(20);
     }
 
     /**
