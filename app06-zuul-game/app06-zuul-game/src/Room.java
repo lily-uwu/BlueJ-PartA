@@ -108,6 +108,16 @@ public class Room
         return exits.get(direction);
     }
 
+    private void addItemToRoom(Items item)
+    {
+        roomInventory.add(item);
+    }
+
+    private void removeItemFromRoom(Items item)
+    {
+        roomInventory.remove(item);
+    }
+
     public String printRoomInv()
     {
         String output = "";
