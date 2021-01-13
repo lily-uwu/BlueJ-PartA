@@ -108,16 +108,28 @@ public class Room
         return exits.get(direction);
     }
 
+    /**
+     * adds an item to the room inventory.
+     * @param item the item that will be added
+     */
     private void addItemToRoom(Items item)
     {
         roomInventory.add(item);
     }
 
+    /**
+     * removes an item from the room inventory.
+     * @param item the item that will be removed
+     */
     private void removeItemFromRoom(Items item)
     {
         roomInventory.remove(item);
     }
 
+    /**
+     * loops through the room inventory and prints the name of each item.
+     * @return a string containing all items in the room inventory
+     */
     public String printRoomInv()
     {
         String output = "";
@@ -126,7 +138,7 @@ public class Room
         {
             for(int i = 0; i <= roomInventory.size(); i++)
             {
-                output = roomInventory.get(i).getName() + " and ";
+                output = roomInventory.get(i).getName();
             }
         }
         else
