@@ -112,7 +112,7 @@ public class Room
      * adds an item to the room inventory.
      * @param item the item that will be added
      */
-    private void addItemToRoom(Items item)
+    public void addItemToRoom(Items item)
     {
         roomInventory.add(item);
     }
@@ -121,7 +121,7 @@ public class Room
      * removes an item from the room inventory.
      * @param item the item that will be removed
      */
-    private void removeItemFromRoom(Items item)
+    public void removeItemFromRoom(Items item)
     {
         roomInventory.remove(item);
     }

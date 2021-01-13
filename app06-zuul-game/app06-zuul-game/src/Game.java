@@ -22,6 +22,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Player player;
         
     /**
      * Create the game and initialise its internal map.
@@ -158,6 +159,12 @@ public class Game
             case QUIT:
                 wantToQuit = quit(command);
                 break;
+
+            case GET:
+                getItem(command);
+
+            case INVENTORY:
+                getInventory();
         }
         return wantToQuit;
     }
@@ -203,6 +210,40 @@ public class Game
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
+    }
+
+    /**
+     * command to let player get an item in a room
+     * @param command
+     */
+    private void getItem(Command command)
+    {
+        if(!command.hasSecondWord())
+        {
+            System.out.println("Get what?");
+            return;
+        }
+
+        String itemString = command.getSecondWord();
+
+        if(command.hasSecondWord() && currentRoom.hasItem(itemString))
+        {
+            player.addItemToInv(currentRoom.getItem(itemString));
+            currentRoom.removeItemFromRoom(currentRoom.getItem(itemString));
+            System.out.println("You have picked up " + itemString + ".");
+        }
+        else
+        {
+            System.out.println("Item not found...");
+        }
+    }
+
+    /**
+     * command to print the inventory of the player
+     */
+    private void getInventory()
+    {
+        player.printInv();
     }
 
     /** 

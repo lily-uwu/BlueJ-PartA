@@ -28,6 +28,24 @@ public class Player
     }
 
     /**
+     * adds an item to the player's inventory.
+     * @param item the item that will be added
+     */
+    public void addItemToInv(Items item)
+    {
+        playerInventory.add(item);
+    }
+
+    /**
+     * removes an item from the player's inventory.
+     * @param item the item that will be removed
+     */
+    public void removeItemFromInv(Items item)
+    {
+        playerInventory.remove(item);
+    }
+
+    /**
      * Prints all of the items in the players inventory
      */
     public void printInv()
