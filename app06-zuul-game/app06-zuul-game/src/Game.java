@@ -107,6 +107,9 @@ public class Game
         currentRoom = prison;  // start game outside
     }
 
+    /**
+     * Initialises game items
+     */
     private void createItems()
     {
         Items key;
