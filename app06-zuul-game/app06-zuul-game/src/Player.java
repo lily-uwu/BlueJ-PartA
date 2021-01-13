@@ -56,6 +56,11 @@ public class Player
         }
     }
 
+    /**
+     * check to see if player has an item
+     * @param itemName the name of the item being compared
+     * @return boolean
+     */
     public boolean hasItem(String itemName)
     {
         boolean output = false;

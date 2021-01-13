@@ -148,6 +148,11 @@ public class Room
         return output;
     }
 
+    /**
+     * check to see if an item is in the room
+     * @param itemName the name of the item being compared
+     * @return boolean
+     */
     public boolean hasItem(String itemName)
     {
         boolean output = false;
@@ -162,6 +167,11 @@ public class Room
         return output;
     }
 
+    /**
+     * returns the compared item
+     * @param itemName the name of the item being located
+     * @return ITEM
+     */
     public Items getItem(String itemName)
     {
         for(int i = 0; i < roomInventory.size(); i++)
