@@ -23,6 +23,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Player player;
+    Items key;
         
     /**
      * Create the game and initialise its internal map.
@@ -106,6 +107,8 @@ public class Game
         exit.setExit("west", warden);
 
         currentRoom = prison;  // start game outside
+
+        kitchen.addItemToRoom(key);
     }
 
     /**
@@ -113,8 +116,6 @@ public class Game
      */
     private void createItems()
     {
-        Items key;
-
         key = new Items("Key", "This key must open a door somewhere...");
     }
 
