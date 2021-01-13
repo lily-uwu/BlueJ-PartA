@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Player
 {
     private int energy;
+    private Items item;
     private ArrayList<Items> playerInv;
 
     public Player(int energy)
@@ -17,5 +18,13 @@ public class Player
     public int getEnergy()
     {
         return energy;
+    }
+
+    public void printInv()
+    {
+        for(Items item : playerInv)
+        {
+            System.out.println(item.getNameDescription());
+        }
     }
 }
