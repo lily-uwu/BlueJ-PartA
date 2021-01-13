@@ -37,4 +37,18 @@ public class Player
             System.out.println(item.getNameDescription());
         }
     }
+
+    public boolean hasItem(String itemName)
+    {
+        boolean output = false;
+
+        for(int i = 0; i < playerInventory.size(); i++)
+        {
+            if(playerInventory.get(i).getName().equals(itemName))
+            {
+                output = true;
+            }
+        }
+        return output;
+    }
 }
