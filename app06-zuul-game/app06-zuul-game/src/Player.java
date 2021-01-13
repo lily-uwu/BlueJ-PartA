@@ -7,7 +7,7 @@ public class Player
 {
     private int energy;
     private Items item;
-    private ArrayList<Items> playerInv;
+    private ArrayList<Items> playerInventory;
 
     /**
      * Creates a player with energy and an inventory
@@ -16,7 +16,7 @@ public class Player
     public Player(int energy)
     {
         this.energy = energy;
-        playerInv = new ArrayList<Items>();
+        playerInventory = new ArrayList<Items>();
     }
 
     /**
@@ -32,7 +32,7 @@ public class Player
      */
     public void printInv()
     {
-        for(Items item : playerInv)
+        for(Items item : playerInventory)
         {
             System.out.println(item.getNameDescription());
         }
