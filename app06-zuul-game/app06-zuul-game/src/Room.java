@@ -147,5 +147,31 @@ public class Room
         }
         return output;
     }
+
+    public boolean hasItem(String itemName)
+    {
+        boolean output = false;
+
+        for(int i = 0; i < roomInventory.size(); i++)
+        {
+            if(roomInventory.get(i).getName().equals(itemName))
+            {
+                output = true;
+            }
+        }
+        return output;
+    }
+
+    public Items getItem(String itemName)
+    {
+        for(int i = 0; i < roomInventory.size(); i++)
+        {
+            if(roomInventory.get(i).getName().equals(itemName))
+            {
+                return roomInventory.get(i);
+            }
+        }
+        return null;
+    }
 }
 
