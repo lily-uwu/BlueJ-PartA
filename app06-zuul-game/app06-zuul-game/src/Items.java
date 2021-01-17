@@ -5,16 +5,27 @@ public class Items
 {
     private String name;
     private String description;
+    private int weight;
 
     /**
      * Creates and item with a name and description
      * @param name the item's name
      * @param description the item's description
      */
-    public Items(String name, String description)
+    public Items(String name, String description, int weight)
     {
         this.name = name;
         this.description = description;
+        this.weight = weight;
+    }
+
+    /**
+     * returns the item weight
+     * @return weight
+     */
+    public int getWeight()
+    {
+        return weight;
     }
 
     /**

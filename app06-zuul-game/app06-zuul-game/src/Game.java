@@ -63,7 +63,7 @@ public class Game
      */
     private void createPlayer()
     {
-        player = new Player(20);
+        player = new Player(20, 70);
     }
 
     /**
@@ -126,7 +126,7 @@ public class Game
      */
     private void createItems()
     {
-        key = new Items("Key", "This key must open a door somewhere...");
+        key = new Items("Key", "This key must open a door somewhere...", 1);
     }
 
     /**

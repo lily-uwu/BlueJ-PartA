@@ -8,15 +8,19 @@ public class Player
     private int energy;
     private Items item;
     private ArrayList<Items> playerInventory;
+    private int maxWeight;
+    private int currentWeight;
 
     /**
      * Creates a player with energy and an inventory
      * @param energy player's energy - reduced by moving room to room
      */
-    public Player(int energy)
+    public Player(int energy, int maxWeight)
     {
         this.energy = energy;
+        this.maxWeight = maxWeight;
         playerInventory = new ArrayList<Items>();
+        currentWeight = 0;
     }
 
     /**
@@ -34,6 +38,23 @@ public class Player
     public void addItemToInv(Items item)
     {
         playerInventory.add(item);
+        currentWeight =+ item.getWeight();
+    }
+
+    /**
+     * @return max player weight
+     */
+    public int getMaxWeight()
+    {
+        return maxWeight;
+    }
+
+    /**
+     * @return current player weight
+     */
+    public int getCurrentWeight()
+    {
+        return currentWeight;
     }
 
     /**
