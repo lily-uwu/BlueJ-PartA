@@ -176,6 +176,7 @@ public class Game
 
             case ESCAPE:
                 wantToQuit = escape(command);
+                break;
 
             case GET:
                 getItem(command);
