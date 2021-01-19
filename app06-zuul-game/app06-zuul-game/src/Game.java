@@ -23,7 +23,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private Player player;
-    private Items key;
+    private Items key, largeSack, energyDrink, keycard, painting, toolbag, jewel, phone, computer, coat;
     private Room frontExit, ropeExit, hallway1, hallway2, gallery, computerRoom, supplyRoom, managerOffice, keyRoom, shop, safeRoom;
         
     /**
@@ -122,6 +122,15 @@ public class Game
         currentRoom = ropeExit;  // start game outside
 
         keyRoom.addItemToRoom(key);
+        keyRoom.addItemToRoom(largeSack);
+        keyRoom.addItemToRoom(energyDrink);
+        keyRoom.addItemToRoom(keycard);
+        keyRoom.addItemToRoom(painting);
+        keyRoom.addItemToRoom(toolbag);
+        keyRoom.addItemToRoom(jewel);
+        keyRoom.addItemToRoom(phone);
+        keyRoom.addItemToRoom(computer);
+        keyRoom.addItemToRoom(coat);
     }
 
     /**
@@ -130,6 +139,15 @@ public class Game
     private void createItems()
     {
         key = new Items("Key", "This key must open a door somewhere...", 1);
+        largeSack = new Items("Sack", "A large sack that could hold a lot.", -10);
+        energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2);
+        keycard = new Items("Keycard", "This keycard must give me access to somewhere...", 1);
+        painting = new Items("Painting", "A painting of a famous face.", 30);
+        toolbag = new Items("Toolbag", "A bag of tools", 20);
+        jewel = new Items("Jewel", "A large expensive jewel!", 25);
+        phone = new Items("Phone", "A smartphone.", 1);
+        computer = new Items("Computer", "Just a computer...", 25);
+        coat = new Items("Coat", "An expensive, fancy coat.", 3);
     }
 
     /**
@@ -188,6 +206,10 @@ public class Game
 
             case INVENTORY:
                 getInventory();
+                break;
+
+            case LOOK:
+                lookCommand();
                 break;
         }
         return wantToQuit;
@@ -286,6 +308,14 @@ public class Game
         {
             System.out.println("Item not found...");
         }
+    }
+
+    /**
+     * command for player to look around active room for items
+     */
+    private void lookCommand()
+    {
+        currentRoom.lookAround();
     }
 
     /**
