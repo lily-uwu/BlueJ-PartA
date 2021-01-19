@@ -177,12 +177,15 @@ public class Game
 
             case GET:
                 getItem(command);
+                break;
 
             case DROP:
                 dropItem(command);
+                break;
 
             case INVENTORY:
                 getInventory();
+                break;
         }
         return wantToQuit;
     }
