@@ -64,6 +64,7 @@ public class Player
     public void removeItemFromInv(Items item)
     {
         playerInventory.remove(item);
+        currentWeight = currentWeight =- item.getWeight();
     }
 
     /**
@@ -94,5 +95,22 @@ public class Player
             }
         }
         return output;
+    }
+
+    /**
+     * returns the compared item
+     * @param itemName the name of the item being located
+     * @return ITEM
+     */
+    public Items getItem(String itemName)
+    {
+        for(int i = 0; i < playerInventory.size(); i++)
+        {
+            if(playerInventory.get(i).getName().equals(itemName))
+            {
+                return playerInventory.get(i);
+            }
+        }
+        return null;
     }
 }

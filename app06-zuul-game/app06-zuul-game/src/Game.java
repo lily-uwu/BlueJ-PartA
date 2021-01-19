@@ -71,54 +71,58 @@ public class Game
      */
     private void createRooms()
     {
-        Room prison, guard, sleepingQuarters, hallway, butcher, kitchen, dining, warden, storage, exit;
+        Room frontExit, ropeExit, hallway1, hallway2, gallery, computerRoom, supplyRoom, managerOffice, keyRoom, shop, safeRoom;
 
         // create the rooms
-        prison = new Room("in the prison");
-        guard = new Room("in the guard room");
-        sleepingQuarters = new Room("in the guard's sleeping quarters");
-        hallway = new Room("in an empty hallway");
-        butcher = new Room("in the butchers room");
-        kitchen = new Room("in the kitchen");
-        dining = new Room("in the dining room");
-        warden = new Room("in the wardens room");
-        storage = new Room("in the storage room");
-        exit = new Room("in a room that appears to be the way out...but the door is locked");
+        frontExit = new Room("at the front exit");
+        ropeExit = new Room("at the rope exit");
+        hallway1 = new Room("in an empty hallway");
+        hallway2 = new Room("in an empty hallway");
+        gallery = new Room("in the gallery");
+        computerRoom = new Room("in the computer room");
+        supplyRoom = new Room("in the supply room");
+        managerOffice = new Room("in the manager's office");
+        keyRoom = new Room("in the key room.");
+        shop = new Room("in the shop.");
+        safeRoom = new Room("in a safe room. There are so many valuables here!");
 
         // initialise room exits
-        prison.setExit("north", guard);
+        frontExit.setExit("south", ropeExit);
 
-        guard.setExit("south", prison);
-        guard.setExit("east", sleepingQuarters);
-        guard.setExit("west", hallway);
+        ropeExit.setExit("north", frontExit);
+        ropeExit.setExit("south", gallery);
+        ropeExit.setExit("east", hallway1);
 
-        sleepingQuarters.setExit("west", guard);
+        gallery.setExit("south", shop);
+        gallery.setExit("east", hallway2);
+        gallery.setExit("north", ropeExit);
 
-        hallway.setExit("east", guard);
-        hallway.setExit("west", butcher);
-        hallway.setExit("north", dining);
+        shop.setExit("north", gallery);
+        shop.setExit("east", safeRoom);
 
-        butcher.setExit("north", kitchen);
-        butcher.setExit("east", hallway);
+        safeRoom.setExit("west", shop);
 
-        kitchen.setExit("south", butcher);
-        kitchen.setExit("east", dining);
+        hallway1.setExit("west", ropeExit);
+        hallway1.setExit("east", computerRoom);
 
-        dining.setExit("south", hallway);
-        dining.setExit("west", kitchen);
-        dining.setExit("north", warden);
+        hallway2.setExit("west", gallery);
+        hallway2.setExit("east", managerOffice);
 
-        warden.setExit("south", dining);
-        warden.setExit("north", storage);
-        warden.setExit("east", exit);
+        managerOffice.setExit("west", hallway2);
+        managerOffice.setExit("north", computerRoom);
+        managerOffice.setExit("east", keyRoom);
 
-        storage.setExit("south", warden);
+        computerRoom.setExit("west", hallway1);
+        computerRoom.setExit("north", supplyRoom);
+        computerRoom.setExit("south", managerOffice);
 
-        exit.setExit("west", warden);
+        supplyRoom.setExit("south", computerRoom);
 
-        currentRoom = prison;  // start game outside
+        keyRoom.setExit("west", managerOffice);
 
-        kitchen.addItemToRoom(key);
+        currentRoom = ropeExit;  // start game outside
+
+        keyRoom.addItemToRoom(key);
     }
 
     /**
@@ -173,6 +177,9 @@ public class Game
 
             case GET:
                 getItem(command);
+
+            case DROP:
+                dropItem(command);
 
             case INVENTORY:
                 getInventory();
@@ -242,6 +249,32 @@ public class Game
             player.addItemToInv(currentRoom.getItem(itemString));
             currentRoom.removeItemFromRoom(currentRoom.getItem(itemString));
             System.out.println("You have picked up " + itemString + ".");
+        }
+        else
+        {
+            System.out.println("Item not found...");
+        }
+    }
+
+    /**
+     * command to let player drop an item from their inventory
+     * @param command
+     */
+    private void dropItem(Command command)
+    {
+        if(!command.hasSecondWord())
+        {
+            System.out.println("Drop what?");
+            return;
+        }
+
+        String itemString = command.getSecondWord();
+
+        if(command.hasSecondWord() && player.hasItem(itemString))
+        {
+            currentRoom.addItemToRoom(player.getItem(itemString));
+            player.removeItemFromInv(player.getItem(itemString));
+            System.out.println("You have dropped " + itemString + ".");
         }
         else
         {
