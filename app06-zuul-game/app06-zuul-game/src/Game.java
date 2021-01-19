@@ -24,6 +24,7 @@ public class Game
     private Room currentRoom;
     private Player player;
     private Items key;
+    private Room frontExit, ropeExit, hallway1, hallway2, gallery, computerRoom, supplyRoom, managerOffice, keyRoom, shop, safeRoom;
         
     /**
      * Create the game and initialise its internal map.
@@ -71,8 +72,6 @@ public class Game
      */
     private void createRooms()
     {
-        Room frontExit, ropeExit, hallway1, hallway2, gallery, computerRoom, supplyRoom, managerOffice, keyRoom, shop, safeRoom;
-
         // create the rooms
         frontExit = new Room("at the front exit");
         ropeExit = new Room("at the rope exit");
@@ -175,6 +174,9 @@ public class Game
                 wantToQuit = quit(command);
                 break;
 
+            case ESCAPE:
+                wantToQuit = escape(command);
+
             case GET:
                 getItem(command);
                 break;
@@ -199,8 +201,8 @@ public class Game
      */
     private void printHelp() 
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
+        System.out.println("You have sneaked into the ");
+        System.out.println("store of valuable things!");
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
@@ -282,6 +284,22 @@ public class Game
         else
         {
             System.out.println("Item not found...");
+        }
+    }
+
+    /**
+     * command to let the player escape and finish the game
+     */
+    private boolean escape(Command command)
+    {
+        if(player.hasItem("Key") && currentRoom == frontExit)
+        {
+            return true;
+        }
+        else
+        {
+            System.out.println("no");
+            return false;
         }
     }
 
