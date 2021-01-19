@@ -38,7 +38,7 @@ public class Player
     public void addItemToInv(Items item)
     {
         playerInventory.add(item);
-        currentWeight =+ item.getWeight();
+        currentWeight += item.getWeight();
     }
 
     /**
@@ -76,6 +76,7 @@ public class Player
         {
             System.out.println(item.getNameDescription());
         }
+        System.out.println("You're currently carrying " + currentWeight + "kg." + "You can carry " + (maxWeight - currentWeight) + " kg more.");
     }
 
     /**

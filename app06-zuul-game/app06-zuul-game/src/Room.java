@@ -69,15 +69,22 @@ public class Room
     public String getLongDescription()
     {
         String output = "";
-        if(roomInventory.isEmpty())
+        if(roomInventory.size() > 0)
+        {
+            output = "You are " + description + ". There seems to be items nearby. " + ".\n" + getExitString();
+        }
+        else
         {
             output = "You are " + description + ".\n" + getExitString();
         }
-        if(!roomInventory.isEmpty())
-        {
-            output = "You are " + description + "." + " You see a " + printRoomInv() + ".\n" + getExitString();
-        }
         return output;
+    }
+
+    public void lookAround()
+    {
+        System.out.println("You look around and see ");
+        System.out.println(printRoomInv());
+        System.out.println(getExitString());
     }
 
     /**
@@ -133,17 +140,9 @@ public class Room
     public String printRoomInv()
     {
         String output = "";
-
-        if(roomInventory.size() > 1)
+        for (Items items : roomInventory)
         {
-            for(int i = 0; i <= roomInventory.size(); i++)
-            {
-                output = roomInventory.get(i).getName();
-            }
-        }
-        else
-        {
-            output = roomInventory.get(0).getName();
+            output += " " + items.getName();
         }
         return output;
     }
