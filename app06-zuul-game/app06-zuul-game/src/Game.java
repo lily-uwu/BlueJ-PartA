@@ -324,13 +324,16 @@ public class Game
     {
         boolean output = false;
 
+        // is the player's room the front exit
         if(currentRoom == frontExit)
         {
+            // if player is under energy threshold for escape
             if(player.getEnergy() < 30)
             {
                 System.out.println("You don't have enough energy to run away!");
                 output = false;
             }
+            // if player meets energy threshold for escape
             if(player.getEnergy() >= 30)
             {
                 System.out.println("You ran away before the police could catch you!");
@@ -338,6 +341,7 @@ public class Game
             }
 
         }
+        // is the player's room the rope exit
         if(currentRoom == ropeExit)
         {
             if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() >= 10)

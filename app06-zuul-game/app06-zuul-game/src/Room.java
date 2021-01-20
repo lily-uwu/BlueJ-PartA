@@ -80,6 +80,9 @@ public class Room
         return output;
     }
 
+    /**
+     * method to run on command so player can search a room for items
+     */
     public void lookAround()
     {
         System.out.println("You look around and see ");
