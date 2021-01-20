@@ -37,8 +37,19 @@ public class Player
      */
     public void addItemToInv(Items item)
     {
-        playerInventory.add(item);
-        currentWeight += item.getWeight();
+        if(currentWeight + item.getWeight() > maxWeight)
+        {
+            playerInventory.add(item);
+            currentWeight += item.getWeight();
+            System.out.println("You have picked up " + item.getName() + " weighing " + item.getWeight() + "kg. You are now carrying " + currentWeight + "kg.");
+            System.out.println("You are carrying too much! You will lose energy faster!");
+        }
+        else
+        {
+            playerInventory.add(item);
+            currentWeight += item.getWeight();
+            System.out.println("You have picked up " + item.getName() + " weighing " + item.getWeight() + "kg. You are now carrying " + currentWeight + "kg.");
+        }
     }
 
     /**
@@ -64,7 +75,8 @@ public class Player
     public void removeItemFromInv(Items item)
     {
         playerInventory.remove(item);
-        currentWeight = currentWeight =- item.getWeight();
+        currentWeight = currentWeight -= item.getWeight();
+        System.out.println("You have dropped " + item.getName() + ".");
     }
 
     /**
@@ -76,7 +88,7 @@ public class Player
         {
             System.out.println(item.getNameDescription());
         }
-        System.out.println("You're currently carrying " + currentWeight + "kg." + "You can carry " + (maxWeight - currentWeight) + " kg more.");
+        System.out.println("You're currently carrying " + currentWeight + "kg. " + "You can carry " + (maxWeight - currentWeight) + " kg more.");
     }
 
     /**

@@ -64,7 +64,7 @@ public class Game
      */
     private void createPlayer()
     {
-        player = new Player(20, 70);
+        player = new Player(50, 70);
     }
 
     /**
@@ -143,7 +143,7 @@ public class Game
         energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2);
         keycard = new Items("Keycard", "This keycard must give me access to somewhere...", 1);
         painting = new Items("Painting", "A painting of a famous face.", 30);
-        toolbag = new Items("Toolbag", "A bag of tools", 20);
+        toolbag = new Items("Toolbag", "A bag of tools.", 20);
         jewel = new Items("Jewel", "A large expensive jewel!", 25);
         phone = new Items("Phone", "A smartphone.", 1);
         computer = new Items("Computer", "Just a computer...", 25);
@@ -276,7 +276,6 @@ public class Game
         {
             player.addItemToInv(currentRoom.getItem(itemString));
             currentRoom.removeItemFromRoom(currentRoom.getItem(itemString));
-            System.out.println("You have picked up " + itemString + ".");
         }
         else
         {
@@ -302,7 +301,6 @@ public class Game
         {
             currentRoom.addItemToRoom(player.getItem(itemString));
             player.removeItemFromInv(player.getItem(itemString));
-            System.out.println("You have dropped " + itemString + ".");
         }
         else
         {
@@ -323,15 +321,51 @@ public class Game
      */
     private boolean escape(Command command)
     {
-        if(player.hasItem("Key") && currentRoom == frontExit)
+        boolean output = false;
+
+        if(currentRoom == frontExit)
         {
-            return true;
+            if(player.getEnergy() < 30)
+            {
+                System.out.println("You don't have enough energy to run away!");
+                output = false;
+            }
+            if(player.getEnergy() >= 30)
+            {
+                System.out.println("You ran away before the police could catch you!");
+                output = true;
+            }
+
+        }
+        if(currentRoom == ropeExit)
+        {
+            if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() >= 10)
+            {
+                System.out.println("You were able to climb the rope and escape stealthily!");
+                output = true;
+            }
+            if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() < 10)
+            {
+                System.out.println("You need at least 10 energy to climb this rope...");
+                output = false;
+            }
+            if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() >= 10)
+            {
+                System.out.println("You are carrying too much to climb this rope...");
+                output = false;
+            }
+            if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() < 10)
+            {
+                System.out.println("You are carrying too much and don't have enough energy to climb this rope...");
+                output = false;
+            }
         }
         else
         {
-            System.out.println("no");
-            return false;
+            System.out.println("You need to get to an exit...");
+            output = false;
         }
+        return output;
     }
 
     /**

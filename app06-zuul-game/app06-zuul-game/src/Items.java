@@ -49,6 +49,6 @@ public class Items
      */
     public String getNameDescription()
     {
-        return name + " - " + description;
+        return name + " - " + description + " - " + weight + "kg.";
     }
 }
