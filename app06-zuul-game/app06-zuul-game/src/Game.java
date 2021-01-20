@@ -61,7 +61,7 @@ public class Game
                 finished = true;
             }
         }
-        System.out.println("Your final score was: " + player.getScore() + ", thank you for playing.  Good bye.");
+        System.out.println("Your final score was: " + player.getScore() + ", thank you for playing.  Goodbye.");
     }
 
     /**
@@ -271,15 +271,13 @@ public class Game
             }
             if(itemString.equals("Keycard"))
             {
+                System.out.println("Key Room unlocked!");
                 keyRoom.setLock(false);
             }
             if(itemString.equals("Key"))
             {
+                System.out.println("Safe Room unlocked!");
                 safeRoom.setLock(false);
-            }
-            else
-            {
-                System.out.println("This item is unusable...");
             }
         }
         else
@@ -309,7 +307,12 @@ public class Game
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
-        else {
+        if(nextRoom.getLockStatus())
+        {
+            System.out.println("This room is locked you need to use a key...");
+        }
+        if(!nextRoom.getLockStatus())
+        {
             player.setEnergy(-1);
             System.out.println("Energy: " + player.getEnergy());
             currentRoom = nextRoom;

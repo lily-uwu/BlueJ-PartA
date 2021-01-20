@@ -147,7 +147,7 @@ public class Room
         String output = "";
         for (Items items : roomInventory)
         {
-            output += " " + items.getName();
+            output += items.getName() + " ";
         }
         return output;
     }
