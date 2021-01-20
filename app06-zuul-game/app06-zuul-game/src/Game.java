@@ -250,12 +250,12 @@ public class Game
 
         if(command.hasSecondWord() && player.hasItem(itemString))
         {
-            if(itemString.equalsIgnoreCase("Drink"))
+            if(itemString.equals("Drink"))
             {
                 player.removeItemFromInv(player.getItem(itemString));
                 player.setEnergy(50);
             }
-            if(itemString.equalsIgnoreCase("Sack"))
+            if(itemString.equals("Sack"))
             {
                 player.removeItemFromInv(player.getItem(itemString));
                 player.setMaxWeight(30);
