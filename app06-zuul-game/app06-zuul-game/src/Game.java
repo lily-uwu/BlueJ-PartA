@@ -54,6 +54,12 @@ public class Game
         {
             Command command = parser.getCommand();
             finished = processCommand(command);
+            if(player.getEnergy() <= 0)
+            {
+                System.out.println("You have ran out of energy...");
+                player.setScore(-player.getScore());
+                finished = true;
+            }
         }
         System.out.println("Your final score was: " + player.getScore() + ", thank you for playing.  Good bye.");
     }
@@ -63,7 +69,7 @@ public class Game
      */
     private void createPlayer()
     {
-        player = new Player(40, 70);
+        player = new Player(30, 70);
     }
 
     /**
@@ -121,15 +127,18 @@ public class Game
         currentRoom = ropeExit;  // start game outside
 
         keyRoom.addItemToRoom(key);
-        keyRoom.addItemToRoom(largeSack);
-        keyRoom.addItemToRoom(energyDrink);
-        keyRoom.addItemToRoom(keycard);
-        keyRoom.addItemToRoom(painting);
-        keyRoom.addItemToRoom(toolbag);
-        keyRoom.addItemToRoom(jewel);
-        keyRoom.addItemToRoom(phone);
-        keyRoom.addItemToRoom(computer);
-        keyRoom.addItemToRoom(coat);
+        supplyRoom.addItemToRoom(largeSack);
+        shop.addItemToRoom(energyDrink);
+        computerRoom.addItemToRoom(keycard);
+        gallery.addItemToRoom(painting);
+        supplyRoom.addItemToRoom(toolbag);
+        safeRoom.addItemToRoom(jewel);
+        managerOffice.addItemToRoom(phone);
+        computerRoom.addItemToRoom(computer);
+        managerOffice.addItemToRoom(coat);
+
+        keyRoom.setLock(true);
+        safeRoom.setLock(true);
     }
 
     /**
@@ -260,6 +269,14 @@ public class Game
                 player.removeItemFromInv(player.getItem(itemString));
                 player.setMaxWeight(30);
             }
+            if(itemString.equals("Keycard"))
+            {
+                keyRoom.setLock(false);
+            }
+            if(itemString.equals("Key"))
+            {
+                safeRoom.setLock(false);
+            }
             else
             {
                 System.out.println("This item is unusable...");
@@ -383,38 +400,35 @@ public class Game
 
         }
         // is the player's room the rope exit
-        if(currentRoom == ropeExit)
-        {
-            // if the player could meet the max weight and minimum energy threshold, they escape
-            if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() >= 10)
-            {
-                System.out.println("You were able to climb the rope and escape stealthily!");
-                output = true;
+        if(currentRoom != frontExit) {
+            if (currentRoom == ropeExit) {
+                // if the player could meet the max weight and minimum energy threshold, they escape
+                if (player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() >= 10) {
+                    System.out.println("You were able to climb the rope and escape stealthily!");
+                    output = true;
+                }
+                // player doesn't meet energy threshold
+                if (player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() < 10) {
+                    System.out.println("You need at least 10 energy to climb this rope...");
+                    output = false;
+                }
+                // player doesn't meet max weight
+                if (player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() >= 10) {
+                    System.out.println("You are carrying too much to climb this rope...");
+                    output = false;
+                }
+                // player doesn't meet energy or max weight threshold
+                if (player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() < 10) {
+                    System.out.println("You are carrying too much and don't have enough energy to climb this rope...");
+                    output = false;
+                }
             }
-            // player doesn't meet energy threshold
-            if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() < 10)
+            // if player isn't at an exit
+            else
             {
-                System.out.println("You need at least 10 energy to climb this rope...");
+                System.out.println("You need to get to an exit...");
                 output = false;
             }
-            // player doesn't meet max weight
-            if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() >= 10)
-            {
-                System.out.println("You are carrying too much to climb this rope...");
-                output = false;
-            }
-            // player doesn't meet energy or max weight threshold
-            if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() < 10)
-            {
-                System.out.println("You are carrying too much and don't have enough energy to climb this rope...");
-                output = false;
-            }
-        }
-        // if player isn't at an exit
-        else
-        {
-            System.out.println("You need to get to an exit...");
-            output = false;
         }
         return output;
     }

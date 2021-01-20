@@ -27,6 +27,7 @@ public class Room
     private ArrayList<Items> roomInventory;
     private Room room;
     private Items item;
+    private boolean locked;
 
     /**
      * Create a room described "description". Initially, it has
@@ -39,6 +40,7 @@ public class Room
         this.description = description;
         exits = new HashMap<>();
         roomInventory = new ArrayList<Items>();
+        locked = false;
     }
 
     /**
@@ -167,6 +169,23 @@ public class Room
             }
         }
         return output;
+    }
+
+    /**
+     * sets the locked status of a room
+     * @param input = locked status
+     */
+    public void setLock(boolean input)
+    {
+        locked = input;
+    }
+
+    /**
+     * @return locked status of room
+     */
+    public boolean getLockStatus()
+    {
+        return locked;
     }
 
     /**

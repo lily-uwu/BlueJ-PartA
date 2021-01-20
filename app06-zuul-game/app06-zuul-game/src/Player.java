@@ -10,6 +10,7 @@ public class Player
     private ArrayList<Items> playerInventory;
     private int maxWeight;
     private int currentWeight;
+    private int score;
 
     /**
      * Creates a player with energy and an inventory
@@ -145,12 +146,19 @@ public class Player
     }
 
     /**
+     * sets the players score
+     */
+    public void setScore(int input)
+    {
+        score = input;
+    }
+
+    /**
      * gets the current score
      * @return score
      */
     public int getScore()
     {
-        int score = 0;
         for(Items item : playerInventory)
         {
             score += item.getScore();
