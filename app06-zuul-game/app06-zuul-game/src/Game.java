@@ -138,11 +138,11 @@ public class Game
     private void createItems()
     {
         key = new Items("Key", "This key must open a door somewhere...", 1, 5);
-        largeSack = new Items("Sack", "A large sack that could hold a lot.", 0, 5);
-        energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2, 5);
+        largeSack = new Items("Sack", "A large sack that could hold a lot.", 0, 0);
+        energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2, 0);
         keycard = new Items("Keycard", "This keycard must give me access to somewhere...", 1, 5);
         painting = new Items("Painting", "A painting of a famous face.", 30, 300);
-        toolbag = new Items("Toolbag", "A bag of tools.", 20,5);
+        toolbag = new Items("Toolbag", "A bag of tools.", 20,15);
         jewel = new Items("Jewel", "A large expensive jewel!", 25, 500);
         phone = new Items("Phone", "A smartphone.", 1, 65);
         computer = new Items("Computer", "Just a computer...", 25, 100);
@@ -344,27 +344,32 @@ public class Game
         // is the player's room the rope exit
         if(currentRoom == ropeExit)
         {
+            // if the player could meet the max weight and minimum energy threshold, they escape
             if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() >= 10)
             {
                 System.out.println("You were able to climb the rope and escape stealthily!");
                 output = true;
             }
+            // player doesn't meet energy threshold
             if(player.getCurrentWeight() <= player.getMaxWeight() && player.getEnergy() < 10)
             {
                 System.out.println("You need at least 10 energy to climb this rope...");
                 output = false;
             }
+            // player doesn't meet max weight
             if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() >= 10)
             {
                 System.out.println("You are carrying too much to climb this rope...");
                 output = false;
             }
+            // player doesn't meet energy or max weight threshold
             if(player.getCurrentWeight() > player.getMaxWeight() && player.getEnergy() < 10)
             {
                 System.out.println("You are carrying too much and don't have enough energy to climb this rope...");
                 output = false;
             }
         }
+        // if player isn't at an exit
         else
         {
             System.out.println("You need to get to an exit...");
