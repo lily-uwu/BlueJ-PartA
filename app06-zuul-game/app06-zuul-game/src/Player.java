@@ -127,11 +127,19 @@ public class Player
         return null;
     }
 
+    /**
+     * sets the players energy, used to change energy when the player moves
+     * @param input
+     */
     public void setEnergy(int input)
     {
         energy += input;
     }
 
+    /**
+     * gets the current score
+     * @return score
+     */
     public int getScore()
     {
         int score = 0;

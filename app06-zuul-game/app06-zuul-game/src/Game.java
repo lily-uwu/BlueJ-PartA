@@ -253,6 +253,7 @@ public class Game
         }
         else {
             player.setEnergy(-5);
+            System.out.println("Energy: " + player.getEnergy());
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }
