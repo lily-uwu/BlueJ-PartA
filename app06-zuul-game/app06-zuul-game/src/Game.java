@@ -55,8 +55,7 @@ public class Game
             Command command = parser.getCommand();
             finished = processCommand(command);
         }
-        
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Your final score was: " + player.getScore() + ", thank you for playing.  Good bye.");
     }
 
     /**
@@ -138,16 +137,16 @@ public class Game
      */
     private void createItems()
     {
-        key = new Items("Key", "This key must open a door somewhere...", 1);
-        largeSack = new Items("Sack", "A large sack that could hold a lot.", -10);
-        energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2);
-        keycard = new Items("Keycard", "This keycard must give me access to somewhere...", 1);
-        painting = new Items("Painting", "A painting of a famous face.", 30);
-        toolbag = new Items("Toolbag", "A bag of tools.", 20);
-        jewel = new Items("Jewel", "A large expensive jewel!", 25);
-        phone = new Items("Phone", "A smartphone.", 1);
-        computer = new Items("Computer", "Just a computer...", 25);
-        coat = new Items("Coat", "An expensive, fancy coat.", 3);
+        key = new Items("Key", "This key must open a door somewhere...", 1, 5);
+        largeSack = new Items("Sack", "A large sack that could hold a lot.", 0, 5);
+        energyDrink = new Items("Drink", "An energy drink! Time to get that juice!", 2, 5);
+        keycard = new Items("Keycard", "This keycard must give me access to somewhere...", 1, 5);
+        painting = new Items("Painting", "A painting of a famous face.", 30, 300);
+        toolbag = new Items("Toolbag", "A bag of tools.", 20,5);
+        jewel = new Items("Jewel", "A large expensive jewel!", 25, 500);
+        phone = new Items("Phone", "A smartphone.", 1, 65);
+        computer = new Items("Computer", "Just a computer...", 25, 100);
+        coat = new Items("Coat", "An expensive, fancy coat.", 3, 10);
     }
 
     /**
@@ -253,6 +252,7 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
+            player.setEnergy(-5);
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
         }

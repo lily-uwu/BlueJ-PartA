@@ -6,17 +6,19 @@ public class Items
     private String name;
     private String description;
     private int weight;
+    private int score;
 
     /**
      * Creates and item with a name and description
      * @param name the item's name
      * @param description the item's description
      */
-    public Items(String name, String description, int weight)
+    public Items(String name, String description, int weight, int score)
     {
         this.name = name;
         this.description = description;
         this.weight = weight;
+        this.score = score;
     }
 
     /**
@@ -34,6 +36,14 @@ public class Items
     public String getName()
     {
         return name;
+    }
+
+    /**
+     * @return the score the item gives
+     */
+    public int getScore()
+    {
+        return score;
     }
 
     /**

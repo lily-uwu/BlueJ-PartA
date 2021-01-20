@@ -126,4 +126,19 @@ public class Player
         }
         return null;
     }
+
+    public void setEnergy(int input)
+    {
+        energy += input;
+    }
+
+    public int getScore()
+    {
+        int score = 0;
+        for(Items item : playerInventory)
+        {
+            score += item.getScore();
+        }
+        return score;
+    }
 }
