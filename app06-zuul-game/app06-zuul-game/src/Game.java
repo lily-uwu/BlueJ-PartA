@@ -63,7 +63,7 @@ public class Game
      */
     private void createPlayer()
     {
-        player = new Player(50, 70);
+        player = new Player(40, 70);
     }
 
     /**
@@ -155,8 +155,8 @@ public class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to the World of Zuul!");
-        System.out.println("World of Zuul is a new, incredibly boring adventure game.");
+        System.out.println("You are a thief who has broken into an expensive shop!");
+        System.out.println("Find as many valuable items as you can and escape!");
         System.out.println("Type '" + CommandWord.HELP + "' if you need help.");
         System.out.println();
         System.out.println(currentRoom.getLongDescription());
@@ -210,6 +210,10 @@ public class Game
             case LOOK:
                 lookCommand();
                 break;
+
+            case USE:
+                useItem(command);
+                break;
         }
         return wantToQuit;
     }
@@ -228,6 +232,43 @@ public class Game
         System.out.println();
         System.out.println("Your command words are:");
         parser.showCommands();
+    }
+
+    /**
+     * allows the user to use certain items
+     * @param command
+     */
+    private void useItem(Command command)
+    {
+        if(!command.hasSecondWord())
+        {
+            System.out.println("Use what?");
+            return;
+        }
+
+        String itemString = command.getSecondWord();
+
+        if(command.hasSecondWord() && player.hasItem(itemString))
+        {
+            if(itemString.equalsIgnoreCase("Drink"))
+            {
+                player.removeItemFromInv(player.getItem(itemString));
+                player.setEnergy(50);
+            }
+            if(itemString.equalsIgnoreCase("Sack"))
+            {
+                player.removeItemFromInv(player.getItem(itemString));
+                player.setMaxWeight(30);
+            }
+            else
+            {
+                System.out.println("This item is unusable...");
+            }
+        }
+        else
+        {
+            System.out.println("You don't have this item...");
+        }
     }
 
     /** 
@@ -252,7 +293,7 @@ public class Game
             System.out.println("There is no door!");
         }
         else {
-            player.setEnergy(-5);
+            player.setEnergy(-1);
             System.out.println("Energy: " + player.getEnergy());
             currentRoom = nextRoom;
             System.out.println(currentRoom.getLongDescription());
@@ -328,13 +369,13 @@ public class Game
         if(currentRoom == frontExit)
         {
             // if player is under energy threshold for escape
-            if(player.getEnergy() < 30)
+            if(player.getEnergy() < 20)
             {
                 System.out.println("You don't have enough energy to run away!");
                 output = false;
             }
             // if player meets energy threshold for escape
-            if(player.getEnergy() >= 30)
+            if(player.getEnergy() >= 20)
             {
                 System.out.println("You ran away before the police could catch you!");
                 output = true;

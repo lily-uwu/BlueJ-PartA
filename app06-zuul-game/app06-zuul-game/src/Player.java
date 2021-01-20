@@ -61,6 +61,14 @@ public class Player
     }
 
     /**
+     * set player max weight
+     */
+    public void setMaxWeight(int input)
+    {
+        maxWeight += input;
+    }
+
+    /**
      * @return current player weight
      */
     public int getCurrentWeight()
