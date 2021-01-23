@@ -307,16 +307,16 @@ public class Game
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
-        if(nextRoom.getLockStatus())
-        {
-            System.out.println("This room is locked you need to use a key...");
-        }
-        if(!nextRoom.getLockStatus())
-        {
-            player.setEnergy(-1);
-            System.out.println("Energy: " + player.getEnergy());
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription());
+        if(nextRoom != null) {
+            if (nextRoom.getLockStatus()) {
+                System.out.println("This room is locked you need to use a key...");
+            }
+            if (!nextRoom.getLockStatus()) {
+                player.setEnergy(-1);
+                System.out.println("Energy: " + player.getEnergy());
+                currentRoom = nextRoom;
+                System.out.println(currentRoom.getLongDescription());
+            }
         }
     }
 
